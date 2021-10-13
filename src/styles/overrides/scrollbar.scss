@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+	@apply h-3 w-3;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 4px solid transparent;
+	min-height: 48px;
+	min-width: 48px;
+	@apply bg-clip-padding bg-border;
+	@apply rounded-lg;
+}
+
+::-webkit-scrollbar-corner {
+	background: none;
+}
+
+.overflow-auto,
+.overflow-x-auto,
+.overflow-y-auto,
+html {
+	// Draft spec. At the time of writing, implemented only in Firefox.
+	// See https://caniuse.com/mdn-css_properties_scrollbar-width and https://caniuse.com/mdn-css_properties_scrollbar-color
+	scrollbar-width: thin;
+	scrollbar-color: var(--border) transparent;
+
+	// Not `scroll` because Firefox is stupid and shows the scroll track even
+	// when there's nothing to scroll.
+	overflow: auto;
+	// Only supported in Chromium browsers. See https://caniuse.com/css-overflow-overlay.
+	overflow: overlay !important;
+}

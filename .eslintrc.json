@@ -1,0 +1,114 @@
+{
+	"extends": "next/core-web-vitals",
+	"rules": {
+		// `next/image` is useless without a custom loader because its default
+		// loader isn't supported when using `next export`
+		"@next/next/no-img-element": "off",
+		"react/jsx-closing-bracket-location": [
+			"warn",
+			"tag-aligned"
+		],
+		"react/jsx-closing-tag-location": "warn",
+		"react/jsx-curly-brace-presence": "warn",
+		"react/jsx-curly-newline": "warn",
+		"react/jsx-filename-extension": [
+			"error",
+			{
+				"extensions": [
+					".tsx"
+				]
+			}
+		],
+		"react/jsx-first-prop-new-line": "warn",
+		"react/jsx-indent": [
+			"warn",
+			"tab"
+		],
+		"react/jsx-max-props-per-line": "warn",
+		"react/jsx-no-constructed-context-values": "error",
+		"react/jsx-no-duplicate-props": "error",
+		"react/jsx-no-useless-fragment": [
+			"warn",
+			{
+				"allowExpressions": true
+			}
+		],
+		"react/jsx-one-expression-per-line": [
+			"warn",
+			{
+				"allow": "single-child"
+			}
+		],
+		"react/jsx-no-script-url": "error",
+		"react/jsx-no-target-blank": [
+			"error",
+			{
+				"enforceDynamicLinks": "always",
+				"warnOnSpreadAttributes": true
+			}
+		],
+		"react/jsx-pascal-case": "error",
+		"react/no-access-state-in-setstate": "error",
+		"react/no-adjacent-inline-elements": "warn",
+		"react/no-array-index-key": "error",
+		// "react/no-arrow-function-lifecycle": "error",
+		"react/no-children-prop": "error",
+		"react/no-danger-with-children": "warn",
+		"react/no-danger": "warn",
+		"react/no-did-mount-set-state": "warn",
+		"react/no-did-update-set-state": "warn",
+		"react/no-will-update-set-state": "error",
+		"react/no-is-mounted": "error",
+		"react/no-find-dom-node": "error",
+		"react/no-multi-comp": "warn",
+		"react/no-namespace": "error",
+		"react/no-redundant-should-component-update": "error",
+		"react/no-render-return-value": "error",
+		"react/no-string-refs": "error",
+		"react/no-this-in-sfc": "warn",
+		"react/no-unstable-nested-components": "error",
+		"react/no-unused-state": "warn",
+		"react/prefer-es6-class": "warn",
+		"react/prefer-stateless-function": "warn",
+		"react/require-optimization": "warn",
+		"react/self-closing-comp": "warn",
+		"react/sort-comp": [
+			"warn",
+			{
+				"order": [
+					"static-variables",
+					"instance-variables",
+					"lifecycle",
+					"static-methods",
+					"getters",
+					"setters",
+					"everything-else",
+					"render"
+				]
+			}
+		],
+		"react/state-in-constructor": [
+			"warn",
+			"never"
+		],
+		"react/void-dom-elements-no-children": "error",
+		"comma-dangle": [
+			"warn",
+			"always-multiline"
+		],
+		"semi": [
+			"warn",
+			"always",
+			{
+				"omitLastInOneLineBlock": true
+			}
+		],
+		"quotes": [
+			"warn",
+			"single",
+			{
+				"allowTemplateLiterals": true
+			}
+		]
+	}
+}

@@ -1,0 +1,27 @@
+.host {
+
+	// Device name
+	> h2 {
+		@apply mt-4 mb-0;
+	}
+
+	> div {
+		@apply grid gap-4 items-center;
+		@apply grid-cols-3 #{'lg:grid-cols-4'} #{'xl:grid-cols-5'} #{'2xl:grid-cols-6'};
+		@apply transition-[background-color] #{'hover:bg-hover'};
+
+		> span {
+			@apply py-4;
+
+			// Update method
+			&:first-child {
+				@apply pl-4;
+			}
+
+			// Latest version
+			&:last-child {
+				@apply pr-4 py-4 font-mono col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
+			}
+		}
+	}
+}

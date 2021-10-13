@@ -1,0 +1,8 @@
+.category {
+	@apply pt-4;
+
+	+ ul > li > h3 {
+		@apply mb-0;
+		@apply font-medium;
+	}
+}

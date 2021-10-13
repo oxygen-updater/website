@@ -1,0 +1,108 @@
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+@import '~tailwindcss/variants';
+
+@import 'overrides/scrollbar';
+@import 'overrides/google-custom-search';
+
+body {
+	@apply bg-bg text-fg;
+	@apply transition-[background-color];
+
+	// Desktop UI
+	@media(min-width: 640px) {
+		background-attachment: scroll, fixed;
+		background-position: top left, center center;
+		background-size: auto, cover;
+		background-image: var(--bg-image);
+	}
+
+	&.light {
+		--primary: #f50514;
+		--bg: white;
+		--fg: #212121;
+		--fg-variant: rgba(0, 0, 0, .75);
+		--bg-variant: rgba(0, 0, 0, .12);
+		--hover: rgba(0, 0, 0, .04);
+		--border: rgba(0, 0, 0, .12);
+		--overlay: rgba(245, 245, 245, .75);
+
+		--bg-image: url('/img/bg/overlay.png?v=1'), url('/img/bg/light.svg?v=1');
+
+		// The following line is still a draft at the time of writing.
+		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
+		color-scheme: light;
+	}
+
+	&.dark {
+		--primary: #ff3d39;
+		--bg: #121212;
+		--fg: white;
+		--fg-variant: rgba(255, 255, 255, .75);
+		--bg-variant: rgba(33, 33, 33, .75);
+		--hover: rgba(255, 255, 255, .04);
+		--border: rgba(255, 255, 255, .12);
+		--overlay: rgba(29, 29, 29, .75);
+
+		--bg-image: url('/img/bg/overlay.png?v=1'), url('/img/bg/dark.svg?v=1');
+
+		// The following line is still a draft at the time of writing.
+		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
+		color-scheme: dark;
+	}
+}
+
+a.external::after {
+	content: '\a0\2197'; // &nbsp;↗
+	opacity: .75;
+}
+
+code {
+
+	&::before,
+	&::after {
+		content: '`';
+		opacity: .75;
+	}
+}
+
+#__next {
+	@apply absolute;
+	@apply top-16; // to separate toolbar and main
+	@apply left-0 right-0 bottom-0;
+	@apply flex flex-col;
+}
+
+#nav {
+	@apply fixed w-full;
+	@apply top-0 z-50;
+}
+
+#nav,
+.links.active {
+	@apply bg-bg;
+	@apply border-b border-border;
+	@apply transition-[background-color];
+
+	// Desktop UI
+	@media(min-width: 640px) {
+		background-attachment: scroll, fixed;
+		background-position: top left, center center;
+		background-size: auto, cover;
+
+		// Make nav's background the same as body, so that it appears seamless
+		background-image: var(--bg-image);
+	}
+}
+
+.links.active {
+	@apply border-t;
+}
+
+// Desktop UI
+@media(min-width: 426px) {
+	.btn.play-store > span {
+		display: inline;
+	}
+}

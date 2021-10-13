@@ -1,0 +1,83 @@
+.host {
+	max-width: 96ch;
+	@apply block;
+	@apply mx-auto -my-4;
+
+	> article {
+		@apply -mx-4;
+
+		// Background image
+		> div:first-child {
+			@apply bg-center bg-cover;
+
+			> header {
+				@apply overlay p-6;
+
+				// Title
+				> h1 {
+					@apply mb-2;
+					@apply text-lg #{'sm:text-xl'} #{'md:text-2xl'} #{'lg:text-3xl'} #{'xl:text-4xl'};
+
+					// Subtitle
+					+ div {
+						@apply mb-4;
+						@apply text-fg-variant text-sm #{'sm:text-base'} #{'lg:text-lg'} #{'xl:text-xl'};
+					}
+				}
+
+				// Author, timestamps, share links
+				> div:last-child {
+					@apply flex flex-wrap gap-y-2 items-center;
+
+					> button {
+						@apply -ml-3;
+					}
+
+					small > time {
+						&:first-of-type {
+							&::before {
+								content: 'published\a0';
+							}
+
+							&::after {
+								content: '\a0•\a0';
+							}
+						}
+
+						&:last-of-type::before {
+							content: 'edited\a0';
+						}
+
+						// Mobile UI
+						@media(max-width: 339px) {
+							&:first-of-type {
+								display: none;
+							}
+						}
+					}
+
+					> div:last-child {
+						@apply flex flex-grow #{'sm:flex-initial'} justify-between;
+						@apply -ml-3;
+					}
+				}
+			}
+		}
+
+		> section:last-child {
+			@apply px-4 pt-4;
+		}
+	}
+}
+
+.notice {
+	@apply flex items-center;
+	@apply px-6 pt-4;
+	@apply text-amber-700;
+
+	> button {
+		@apply -ml-4;
+		@apply cursor-default;
+		@apply border-0 #{'hover:bg-transparent'};
+	}
+}

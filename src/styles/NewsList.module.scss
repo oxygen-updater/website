@@ -1,0 +1,112 @@
+.host {
+	max-width: 96ch;
+	@apply mx-auto -my-4;
+
+	// <author> has written <n> articles so far
+	> div:first-child {
+		@apply p-4 -mx-4;
+	}
+
+	> details {
+
+		// Top <t> articles (last 3 months)
+		> summary {
+			@apply border bg-hover #{'hover:!bg-border'}
+		}
+
+		> div {
+			@apply border-l;
+			@apply bg-hover;
+
+			// Background image
+			> article {
+				@apply flex flex-col flex-auto items-center;
+				@apply bg-center bg-cover;
+				@apply w-[200px];
+
+				// Overlay
+				> header {
+					@apply flex flex-col;
+					@apply overlay;
+					@apply p-4;
+					@apply border-r border-b;
+					@apply transition-[background-color] #{'hover:bg-bg'};
+					@apply w-full h-[200px];
+
+					> a,
+					> small {
+						@apply line-clamp-3;
+					}
+
+					// Title
+					> a {
+						@apply font-display;
+						@apply #{'!border-b-0'};
+					}
+
+					// Subtitle & timestamp
+					> small {
+						@apply text-fg-variant;
+					}
+				}
+			}
+		}
+	}
+
+	// Item
+	> article {
+		@apply flex flex-col;
+		@apply px-4 py-8;
+		@apply transition-[background-color];
+		@apply #{'hover:bg-hover'};
+
+		> a {
+			@apply border-b-0;
+
+			> header {
+				@apply flow-root cursor-pointer;
+
+				> img {
+					@apply float-right ml-2;
+					@apply object-cover object-center;
+					@apply rounded-lg;
+					width: 100px;
+					height: 100px;
+				}
+
+				// Title
+				> h2 {
+					@apply mb-1;
+					@apply text-base #{'sm:text-lg md:text-xl'};
+				}
+
+				// Subtitle
+				> span {
+					@apply flex-auto min-h-0;
+					@apply text-fg-variant;
+					@apply overflow-hidden text-ellipsis;
+				}
+			}
+		}
+
+		// Author & timestamp
+		> footer {
+			@apply mt-3;
+
+			> small {
+				@apply text-fg-variant;
+
+				> a {
+					@apply border-b-0;
+				}
+			}
+		}
+	}
+
+	> article,
+	> ins {
+		@apply -mx-4;
+		@apply border-t;
+		@apply #{'first-of-type:border-t-0'};
+	}
+}

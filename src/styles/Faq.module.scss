@@ -1,0 +1,9 @@
+.category {
+	@apply mt-4 pt-4 #{'first-of-type:-mt-4'};
+	@apply border-t;
+}
+
+.itemBody {
+	@apply ml-0.5 pb-4 pt-1 px-8;
+	@apply text-fg-variant;
+}

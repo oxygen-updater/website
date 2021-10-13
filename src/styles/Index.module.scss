@@ -1,0 +1,197 @@
+#scroller {
+	@apply grid grid-cols-1 #{'sm:grid-cols-12'};
+	@apply gap-8;
+
+	&.active #scrollerLeft {
+		// Toolbar height + top padding
+		top: 80px !important;
+	}
+}
+
+#scrollerLeft {
+	@apply hidden #{'sm:block'};
+	@apply #{'sm:col-span-5'};
+
+	@apply h-[1060px]; // SVG's viewBox height
+	@apply max-w-full;
+	max-height: calc(100vh - 6rem);
+
+	> image.screenshot {
+		position: absolute;
+
+		// Keep first image visible by default
+		&:not(:first-of-type) {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+#scrollerRight {
+	@apply #{'sm:col-span-7'};
+
+	> header {
+
+		// Title
+		> h1 {
+			@apply mt-4 mb-2;
+			@apply text-4xl #{'md:text-5xl'} #{'lg:text-6xl'} #{'xl:text-7xl'} #{'2xl:text-8xl'};
+		}
+
+		// Version & size
+		> p:first-of-type {
+			@apply font-mono;
+			@apply ml-1;
+			@apply h-5;
+
+			// Tagline
+			+ p {
+				@apply text-lg #{'md:text-xl'} #{'lg:text-2xl'} #{'xl:text-3xl'} #{'2xl:text-4xl'};
+
+				// Play Store & skip intro buttons
+				+ div {
+					@apply flex flex-wrap items-center gap-y-2;
+
+					> a {
+						@apply mr-4;
+						@apply #{'!border-none'};
+					}
+
+					// Disclaimer
+					+ p {
+						@apply mt-6 text-xs;
+					}
+				}
+			}
+		}
+
+		// Intro header
+		+ h2 {
+			@apply pt-24;
+		}
+	}
+
+	// Supported devices
+	> details {
+		> summary {
+			@apply bg-hover #{'hover:!bg-border'};
+			@apply border;
+		}
+
+		> div {
+			@apply bg-hover;
+			@apply border-l;
+		}
+	}
+
+	> div[data-scroll-marker] {
+		padding: 10% 0;
+
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+
+		// Desktop UI
+		@media(min-width: 640px) {
+			padding: 20% 0;
+		}
+
+		> div {
+			@apply relative #{'sm:hidden'};
+			@apply mb-4;
+			@apply h-[590px];
+
+			> img {
+				min-width: 100%;
+				max-width: 100%;
+				min-height: 100%;
+				max-height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	p,
+	ul {
+		@apply text-fg-variant;
+	}
+}
+
+// Featured Play Store reviews
+.content {
+	@apply pt-24;
+
+	> section > p {
+		text-align: justify;
+	}
+}
+
+.featuredReview {
+	@apply flex flex-col grow basis-1/2;
+	@apply border-r border-b;
+	@apply py-4 px-6;
+	@apply transition-[background-color] #{'hover:bg-hover'};
+	@apply min-w-[300px];
+
+	// Header
+	> div {
+		@apply flex items-center;
+		@apply mb-4;
+
+		> img {
+			@apply rounded-full;
+			@apply mr-4;
+		}
+
+		// Author, rating, timestamp
+		> div {
+			@apply flex-auto;
+
+			// Star
+			> svg {
+				@apply text-yellow-700;
+			}
+
+			// Timestamp
+			> span {
+				@apply text-xs text-fg-variant;
+				@apply ml-2;
+			}
+		}
+
+		// Link to review
+		> a {
+			@apply p-3;
+		}
+	}
+
+	// Review
+	> span {
+		@apply text-justify;
+	}
+}
+
+.groupedDevice {
+	@apply flex flex-col flex-auto items-center;
+	@apply border-r border-b;
+	@apply py-4 px-6;
+	@apply transition-[background-color] #{'hover:bg-hover'};
+	@apply w-[200px];
+
+	> img {
+		@apply h-[128px];
+	}
+
+	> span,
+	> small {
+		text-align: center;
+	}
+
+	> span {
+		@apply mt-4 text-center;
+	}
+
+	> small {
+		@apply text-fg-variant;
+	}
+}

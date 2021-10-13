@@ -1,0 +1,117 @@
+.gsc-control-cse,
+.gsc-input-box,
+.gs-result .gs-image,
+.gs-result .gs-promotion-image,
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult,
+.gsc-cursor-page {
+	background-color: transparent !important;
+	border: none !important;
+}
+
+.gsc-control-cse,
+.gsst_a,
+.gsc-above-wrapper-area-container {
+	padding: 0 !important;
+}
+
+.gsc-search-box > tbody > tr {
+	&:hover {
+		background-color: inherit;
+	}
+
+	> td {
+		padding: 0;
+	}
+}
+
+.gsc-input {
+	background-color: transparent !important;
+	margin-bottom: 0;
+}
+
+.gsc-refinementsArea {
+	border: none !important;
+}
+
+.gsc-refinementHeader {
+	line-height: 20px !important;
+
+	&.gsc-refinementhActive,
+	&.gsc-refinementhInactive {
+		cursor: pointer;
+	}
+
+	.gsc-tabHeader.gsc-tabhActive,
+	&.gsc-refinementhActive,
+	.gsc-tabHeader.gsc-tabhInactive,
+	&.gsc-refinementhInactive {
+		background-color: transparent !important;
+		padding: .5rem 1.25rem !important;
+		border: 1px solid transparent !important;
+		border-radius: 1.5rem;
+
+		&:hover {
+			background-color: var(--hover) !important;
+		}
+	}
+
+	&.gsc-refinementhActive,
+	.gsc-tabHeader.gsc-tabhActive {
+		border: 1px solid var(--border) !important;
+	}
+}
+
+.gsst_a {
+	border-bottom: none !important;
+}
+
+.gsc-above-wrapper-area {
+	border: none !important;
+}
+
+.gsc-above-wrapper-area-container {
+	border: none;
+	margin-bottom: 0;
+}
+
+.gsc-result-info-container {
+	height: inherit;
+	padding: 0;
+}
+
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b,
+.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+.gs-fileFormatType,
+.gsst_a .gscb_a {
+	color: initial !important;
+}
+
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+	// font-family: Google Sans Display, Roboto, sans-serif;
+	font-weight: 500;
+}
+
+.gsc-result-info,
+.gs-webResult div.gs-visibleUrl,
+.gsc-cursor-page,
+.gcsc-more-maybe-branding-root,
+.gcsc-find-more-on-google {
+	color: var(--fg-variant) !important;
+}
+
+.gcsc-find-more-on-google > svg {
+	display: inline-block;
+	fill: var(--fg-variant) !important;
+}
+
+.gs-web-image-box,
+.gs-promotion-image-box {
+	margin-right: .5rem !important;
+}

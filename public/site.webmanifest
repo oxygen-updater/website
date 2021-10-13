@@ -1,0 +1,65 @@
+{
+	"name": "Oxygen Updater",
+	"short_name": "Oxygen Updater",
+	"description": "Oxygen Updater is an open-source app for OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!",
+	"theme_color": "#f50514",
+	"background_color": "#f50514",
+	"display": "standalone",
+	"scope": "./",
+	"start_url": "./",
+	"orientation": "any",
+	"related_applications": [
+		{
+			"platform": "play",
+			"url": "https://play.google.com/store/apps/details?id=com.arjanvlek.oxygenupdater&utm_source=website-manifest",
+			"id": "com.arjanvlek.oxygenupdater"
+		}
+	],
+	"icons": [
+		{
+			"src": "/img/favicon/android-chrome-36x36.png?v=1",
+			"sizes": "36x36",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-48x48.png?v=1",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-72x72.png?v=1",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-96x96.png?v=1",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-144x144.png?v=1",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-192x192.png?v=1",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-256x256.png?v=1",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-384x384.png?v=1",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/favicon/android-chrome-512x512.png?v=1",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

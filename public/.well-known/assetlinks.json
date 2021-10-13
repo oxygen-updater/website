@@ -1,0 +1,9 @@
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.arjanvlek.oxygenupdater",
+    "sha256_cert_fingerprints":
+      ["DD:4B:21:15:FC:FC:E7:4A:91:21:16:13:C6:5F:37:DD:90:F9:CC:71:78:37:D5:EA:FE:C8:D6:32:2D:6F:4B:41"]
+   }
+}

@@ -1,0 +1,28 @@
+.host {
+	@apply flex flex-col items-center justify-center;
+	@apply mx-auto;
+
+	> section:first-child {
+		@apply flex items-center;
+		@apply mb-4;
+
+		> svg {
+			@apply text-9xl;
+			@apply text-red-500;
+		}
+
+		> div {
+			@apply ml-4;
+
+			> p {
+				@apply mb-0;
+			}
+		}
+	}
+}
+
+.gcseContainer {
+	@apply w-full;
+
+	max-width: 700px;
+}
