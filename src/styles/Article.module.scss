@@ -66,6 +66,16 @@
 
 		> section:last-child {
 			@apply px-4 pt-4;
+
+			// Draft spec. At the time of writing, implemented only in Firefox.
+			// See https://caniuse.com/mdn-css_properties_scrollbar-width and https://caniuse.com/mdn-css_properties_scrollbar-color
+			scrollbar-width: thin;
+
+			// Not `scroll` because Firefox is stupid and shows the scroll track even
+			// when there's nothing to scroll.
+			overflow-x: auto;
+			// Only supported in Chromium browsers. See https://caniuse.com/css-overflow-overlay.
+			overflow-x: overlay !important;
 		}
 	}
 }

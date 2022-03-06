@@ -87,7 +87,7 @@ code {
 
 	// Desktop UI
 	@media(min-width: 640px) {
-		background-attachment: scroll, fixed;
+		background-attachment: fixed;
 		background-position: top left, center center;
 		background-size: auto, cover;
 

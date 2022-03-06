@@ -29,3 +29,8 @@ html {
 	// Only supported in Chromium browsers. See https://caniuse.com/css-overflow-overlay.
 	overflow: overlay !important;
 }
+
+body {
+	// GSAP adds `overflow-y: scroll` and Firefox shows a track unnecessarily
+	overflow-y: initial !important;
+}
