@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import type { GetStaticProps } from 'next';
-import type { FunctionComponent } from 'preact';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
 import Accordion from 'src/components/accordion';
 import DefaultHead from 'src/components/default-head';
@@ -37,27 +36,6 @@ type GsapContent = (HTMLElement & {
 	leave?: () => gsap.core.Tween;
 });
 
-const Note: FunctionComponent = ({ children }) => (
-	<p className="text-xs">
-		Note:
-		{' '}
-		{children}
-	</p>
-);
-
-const UpdateDate: FunctionComponent<{ isoDate: string }> = ({ isoDate }) => {
-	const [updateDate, _] = useState(new Date(isoDate));
-
-	return (
-		<time
-			title={isoDate}
-			dateTime={isoDate}
-		>
-			{updateDate.toLocaleString()}
-		</time>
-	);
-};
-
 interface Props {
 	appInfo: AppInfo
 	totalEnabledDevices: number
@@ -79,7 +57,6 @@ export default function Home({
 	const asideRef = useRef<HTMLElement>(null);
 
 	const scrollTriggerRef = useRef<ScrollTrigger>();
-	const smallBreakpointRef = useRef<MediaQueryList>();
 
 	/**
 	 * Initially check if reduced motion is preferred. Value is never updated.

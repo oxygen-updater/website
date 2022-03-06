@@ -190,7 +190,6 @@ const syncTopicRelation = () => window?.indexedDB?.databases().then(dbInfo => {
 	};
 });
 
-const REGEX_ARTICLE_URL = /^https:\/\/(?:test\.)?oxygenupdater\.com\/article\/(\d+)\/?$/i;
 const KEY_NOTIFICATION_REQUEST_LAST_HIDDEN = 'notification_request_last_hidden';
 
 const shouldShowNotificationRequest = () => {
