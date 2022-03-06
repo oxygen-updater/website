@@ -3,7 +3,7 @@
 	@apply mx-auto -my-4;
 
 	// <author> has written <n> articles so far
-	> div:first-child {
+	> div:first-of-type {
 		@apply p-4 -mx-4;
 	}
 
