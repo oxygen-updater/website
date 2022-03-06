@@ -1,0 +1,57 @@
+name: Build & Deploy
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'public/**'
+    - 'src/**'
+      # match files with extension in current directory
+    - '*.m?js'
+    - '*.json'
+    - '!.*rc.m?js'
+    - '!.*rc.json'
+
+env:
+  PRODUCTION_USERNAME: ${{ secrets.SSH_PRODUCTION_USERNAME }}
+  PRODUCTION_HOST: ${{ secrets.SSH_PRODUCTION_HOST }}
+  PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_PRODUCTION_STAGING_DIR_PREFIX }}website
+  TESTING_USERNAME: ${{ secrets.SSH_TESTING_USERNAME }}
+  TESTING_HOST: ${{ secrets.SSH_TESTING_HOST }}
+  TESTING_STAGING_DIR_PATH: ${{ secrets.SSH_TESTING_STAGING_DIR_PREFIX }}website
+  PRODUCTION_ARTIFACT_NAME: out/prod.tgz
+  TESTING_ARTIFACT_NAME: out/test.tgz
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build & bundle into gzipped tar
+        run: |
+          echo "${{ secrets.FILE_ENV_CMDRC_JS }}" > .env-cmdrc.js
+          npm run build:prod
+          npm run build:test
+          rm .env-cmdrc.js
+          tar -C out/prod -czf $PRODUCTION_ARTIFACT_NAME .
+          tar -C out/test -czf $TESTING_ARTIFACT_NAME .
+
+      - name: Setup SSH keys
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRODUCTION_PRIVATE_KEY }}" > ~/.ssh/prod_ed25519
+          echo "${{ secrets.SSH_TESTING_PRIVATE_KEY }}" > ~/.ssh/test_ed25519
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          chmod 600 ~/.ssh/prod_ed25519 ~/.ssh/test_ed25519 ~/.ssh/config
+          echo -e "Host prod-server\n\tHostName $PRODUCTION_HOST\n\tUser $PRODUCTION_USERNAME\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
+          echo -e "Host test-server\n\tHostName $TESTING_HOST\n\tUser $TESTING_USERNAME\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
+
+      - name: Stage to servers & deploy
+        run: |
+          ssh prod-server "mkdir -p $PRODUCTION_STAGING_DIR_PATH && cd $PRODUCTION_STAGING_DIR_PATH && rm *.tgz -f"
+          ssh test-server "mkdir -p $TESTING_STAGING_DIR_PATH && cd $TESTING_STAGING_DIR_PATH && rm *.tgz -f"
+          scp $PRODUCTION_ARTIFACT_NAME prod-server:$PRODUCTION_STAGING_DIR_PATH
+          scp $TESTING_ARTIFACT_NAME test-server:$TESTING_STAGING_DIR_PATH
+          ssh prod-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
+          ssh test-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"

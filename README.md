@@ -1,5 +1,7 @@
 # Oxygen Updater website
 
+[![Build & Deploy][workflow-badge-image]][workflow-badge-link]
+
 Completely static, built with [Next.js][nextjs], [Preact][preact], and [TailwindCSS][tailwindcss].
 
 Detailed setup instructions may follow in a later commit.
@@ -14,6 +16,9 @@ npm run build:dev  # build for the `dev` environment (`localhost` or a custom ho
 npm run build:test # build for the `test` environment (https://test.oxygenupdater.com/)
 npm run build:prod # build for the `prod` environment (https://oxygenupdater.com/)
 ```
+
+[workflow-badge-image]: https://github.com/oxygen-updater/website/workflows/Build%20%26%20Deploy/badge.svg
+[workflow-badge-link]: https://github.com/oxygen-updater/website/actions/workflows/build+deploy.yml
 
 [nextjs]: https://nextjs.org
 [preact]: https://preactjs.com
