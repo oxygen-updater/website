@@ -24,28 +24,32 @@ interface Props {
 export default function FcmNotification({ onNewArticle }: Props) {
 
 	const [showRequest, setShowRequest] = useState(shouldShowNotificationRequest());
-	const [permission, setPermission] = useState<NotificationPermission>();
+	const [permission, setPermission] = useState<NotificationPermission | undefined>();
 
 	const hideClicked = useCallback(() => {
 		updateNotificationRequestLastHidden();
 		setShowRequest(false);
 	}, []);
 
-	const requestPermission = useCallback(() => Notification.requestPermission().then(
-		permission => setPermission(permission),
-		error => setPermission(Notification.permission),
-	), []);
+	const requestPermission = useCallback(() => isSupported().then(supported => {
+		if (supported) {
+			Notification.requestPermission().then(
+				permission => setPermission(permission),
+				error => setPermission(Notification.permission),
+			);
+		} else {
+			setPermission(undefined);
+		}
+	}), []);
 
 	useEffect(() => {
-		const notifPermission = Notification.permission;
-		if (!permission) {
-			setPermission(notifPermission);
-		}
-
 		setShowRequest(shouldShowNotificationRequest());
 
 		isSupported().then(supported => {
 			if (supported) {
+				const notifPermission = Notification.permission;
+				setPermission(notifPermission);
+
 				const messaging = getMessaging(firebaseApp);
 				onMessage(messaging, payload => onForegroundMessage(payload, onNewArticle));
 
@@ -54,13 +58,14 @@ export default function FcmNotification({ onNewArticle }: Props) {
 				} else {
 					syncTopicRelation();
 				}
+			} else {
+				setPermission(undefined);
 			}
 		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []); // Perf: run only once (on mount & unmount)
+	}, [onNewArticle]); // Perf: run only when `onNewArticle` changes
 
 	return (
-		showRequest && permission !== 'granted' ?
+		showRequest && (permission !== undefined && permission !== 'granted') ?
 			// For some reason if it's a <div>, NextJS/Preact renders the HTML
 			// classes of `NewsPagination` from the second-load onwards
 			<section className="flex flex-wrap items-center justify-end px-4 py-1 -mx-4 sm:border-x border-b border-border sm:rounded-b">
