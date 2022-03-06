@@ -1,7 +1,8 @@
 import type { PlayStoreReview } from 'src/models/play-store-review';
 
-// Note to contributors: time must be UTC/GMT
-export const updateDate = new Date('2022-01-11 07:05 UTC').toISOString();
+export const updateDate = new Date(
+	Date.UTC(2022, 0, 11, 7, 5) // month is 0-indexed
+).toISOString();
 
 /**
  * Prefix 'https://play.google.com/store/apps/details?id=com.arjanvlek.oxygenupdater&reviewId=gp%3AAOqpTO' to `id`
