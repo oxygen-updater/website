@@ -31,6 +31,8 @@ jobs:
       - name: Build & bundle into gzipped tar
         run: |
           echo "${{ secrets.FILE_ENV_CMDRC_JS }}" > .env-cmdrc.js
+          npm install
+          npm audit fix
           npm run build:prod
           npm run build:test
           rm .env-cmdrc.js
