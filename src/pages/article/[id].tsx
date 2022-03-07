@@ -75,7 +75,7 @@ export default function Article({ article }: Props) {
 				<meta
 					key=".$og:description"
 					property="og:description"
-					content={localeTitle}
+					content={localeSubtitle}
 				/>
 				<meta
 					key=".$description"
