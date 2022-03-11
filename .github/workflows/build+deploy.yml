@@ -13,12 +13,6 @@ on:
     - '!.*rc.json'
 
 env:
-  PRODUCTION_USERNAME: ${{ secrets.SSH_PRODUCTION_USERNAME }}
-  PRODUCTION_HOST: ${{ secrets.SSH_PRODUCTION_HOST }}
-  PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_PRODUCTION_STAGING_DIR_PREFIX }}website
-  TESTING_USERNAME: ${{ secrets.SSH_TESTING_USERNAME }}
-  TESTING_HOST: ${{ secrets.SSH_TESTING_HOST }}
-  TESTING_STAGING_DIR_PATH: ${{ secrets.SSH_TESTING_STAGING_DIR_PREFIX }}website
   PRODUCTION_ARTIFACT_NAME: out/prod.tgz
   TESTING_ARTIFACT_NAME: out/test.tgz
 
@@ -28,11 +22,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up NodeJS v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: Cache .next
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('public/**', 'src/**', '*.m?js', 'tsconfig.json', '!.*rc.m?js') }}
+          # If source files changed but packages didn't, rebuild from a prior cache
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-
+
       - name: Build & bundle into gzipped tar
         run: |
-          echo "${{ secrets.FILE_ENV_CMDRC_JS }}" > .env-cmdrc.js
+          cat <<'EOF' > .env-cmdrc.js
+          ${{ secrets.FILE_ENV_CMDRC_JS }}
+          EOF
           npm install
           npm audit fix
+          npx next telemetry disable
           npm run build:prod
           npm run build:test
           rm .env-cmdrc.js
@@ -46,10 +58,13 @@ jobs:
           echo "${{ secrets.SSH_TESTING_PRIVATE_KEY }}" > ~/.ssh/test_ed25519
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           chmod 600 ~/.ssh/prod_ed25519 ~/.ssh/test_ed25519 ~/.ssh/config
-          echo -e "Host prod-server\n\tHostName $PRODUCTION_HOST\n\tUser $PRODUCTION_USERNAME\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
-          echo -e "Host test-server\n\tHostName $TESTING_HOST\n\tUser $TESTING_USERNAME\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
+          echo -e "Host prod-server\n\tHostName ${{ secrets.SSH_PRODUCTION_HOST }}\n\tUser ${{ secrets.SSH_PRODUCTION_USERNAME }}\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
+          echo -e "Host test-server\n\tHostName ${{ secrets.SSH_TESTING_HOST }}\n\tUser ${{ secrets.SSH_TESTING_USERNAME }}\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
 
       - name: Stage to servers & deploy
+        env:
+          PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_PRODUCTION_STAGING_DIR_PREFIX }}website
+          TESTING_STAGING_DIR_PATH: ${{ secrets.SSH_TESTING_STAGING_DIR_PREFIX }}website
         run: |
           ssh prod-server "mkdir -p $PRODUCTION_STAGING_DIR_PATH && cd $PRODUCTION_STAGING_DIR_PATH && rm *.tgz -f"
           ssh test-server "mkdir -p $TESTING_STAGING_DIR_PATH && cd $TESTING_STAGING_DIR_PATH && rm *.tgz -f"
