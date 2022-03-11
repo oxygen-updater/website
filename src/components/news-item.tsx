@@ -11,7 +11,7 @@ interface Props {
 export default function NewsItem({ article, isNew }: Props) {
 	return article.ad ?
 		<GoogleAdsense type="infeed" /> :
-		<article className={(isNew ? ' bg-bg-variant' : '')}>
+		<article className={(isNew ? ' bg-bg-variant' : undefined)}>
 			<Link href={`/article/${article.id}/`}>
 				<a title={`Read article #${article.id}`}>
 					<header>

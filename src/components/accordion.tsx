@@ -123,7 +123,7 @@ export default function Accordion({
 		>
 			<summary
 				ref={summaryRef}
-				className={summaryClassName}
+				className={summaryClassName || undefined}
 				onClick={summaryClicked}
 			>
 				<h3>{summary}</h3>
@@ -131,7 +131,7 @@ export default function Accordion({
 
 			<div
 				ref={contentRef}
-				className={contentClassName}
+				className={contentClassName || undefined}
 			>
 				{children}
 			</div>

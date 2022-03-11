@@ -28,7 +28,7 @@ export default function Faq({ list }: Props) {
 						<Accordion
 							key={`item-${item.id}`}
 							summary={pickLocaleField(item, 'title')}
-							summaryClassName={item.imp ? 'text-primary' : ''}
+							summaryClassName={item.imp ? 'text-primary' : undefined}
 							contentClassName={styles.itemBody}
 						>
 							<FaqBody body={pickLocaleField(item, 'body')} />
