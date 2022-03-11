@@ -2,7 +2,7 @@
 	"name": "website",
 	"version": "1.0.0",
 	"private": true,
-	"license": "UNLICENSED",
+	"license": "BSD-3-Clause-Clear",
 	"description": "New NextJS+Preact rewrite of the website",
 	"homepage": "https://oxygenupdater.com",
 	"bugs": "https://github.com/oxygen-updater/website/issues",
