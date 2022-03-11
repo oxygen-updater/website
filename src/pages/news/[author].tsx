@@ -137,7 +137,10 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 		})
 	).json() as Article[];
 
-	createAtomFeed(newsList); // must be done before the `for` block
+	if (author === 'all') {
+		// Must be done before the `for` block to avoid including `ad`s
+		createAtomFeed(newsList);
+	}
 
 	// Note: if changed, update the "discount ads" formula for <Author />
 	for (let i = 5, n = newsList.length; i <= n; i += 6) {
