@@ -58,7 +58,7 @@
 		@apply flex flex-col;
 		@apply px-4 py-8;
 		@apply transition-[background-color];
-		@apply #{'hover:bg-hover'};
+		@apply #{'sm:hover:bg-hover'};
 
 		> a {
 			@apply border-b-0;
