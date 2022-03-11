@@ -52,7 +52,8 @@ export default function NewsList({ author, articles }: Props) {
 					<>
 						<DefaultHead title={`Articles by ${author.name} • ${TITLE}`} />
 
-						<div>{`${author.name} has written ${Math.round(6 * (articles.length / 7) + (1 / 7))} articles so far`}</div>
+						{/* count articles ignoring `ad` entries */}
+						<div>{`${author.name} has written ${Math.round(5 * (articles.length / 6) + (1 / 6))} articles so far`}</div>
 
 						{author.top.length > 0 ?
 							<Accordion
@@ -142,14 +143,18 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 		createAtomFeed(newsList);
 	}
 
-	// Note: if changed, update the "discount ads" formula for <Author />
-	for (let i = 5, n = newsList.length; i <= n; i += 6) {
+	const articles: Article[] = [];
+	newsList.forEach((article, index) => {
+		articles.push(article);
 		// Insert an ad entry after every 5 elements
-		newsList.splice(i, 0, {
-			id: 100001 + i,
-			ad: true,
-		});
-	}
+		// Note: if changed, update the "count articles ignoring `ad` entries" formula
+		if ((index + 1) % 5 === 0) {
+			articles.push({
+				id: 100001 + index,
+				ad: true,
+			});
+		};
+	});
 
 	let authorTopArticles: Article[] | null = null;
 	if (authorForApi) {
@@ -169,7 +174,7 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 				name: author?.replaceAll('-', ' ') ?? '',
 				top: authorTopArticles ?? [],
 			},
-			articles: newsList,
+			articles,
 		},
 	};
 };
