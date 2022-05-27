@@ -11,7 +11,7 @@ body {
 	@apply transition-[background-color];
 
 	// Desktop UI
-	@media(min-width: 640px) {
+	@screen sm {
 		background-attachment: scroll, fixed;
 		background-position: top left, center center;
 		background-size: auto, cover;
@@ -86,7 +86,7 @@ code {
 	@apply transition-[background-color];
 
 	// Desktop UI
-	@media(min-width: 640px) {
+	@screen sm {
 		background-attachment: fixed;
 		background-position: top left, center center;
 		background-size: auto, cover;

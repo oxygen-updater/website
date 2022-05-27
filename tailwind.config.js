@@ -15,9 +15,7 @@ defaultTheme.fontFamily.sans = [
 	...defaultTheme.fontFamily.sans.filter(f => f !== 'Roboto'),
 ];
 
-/**
- * @type {import("@types/tailwindcss/tailwind-config").TailwindConfig}
- */
+/** @type {import('tailwindcss').Config} */
 const config = {
 	// https://tailwindcss.com/docs/dark-mode:
 	// - 'media' for browser/system-based dark mode (prefers-color-scheme)

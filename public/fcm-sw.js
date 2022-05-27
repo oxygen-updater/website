@@ -1,6 +1,6 @@
 // Ensure Firebase version is synced with package.json
-importScripts('https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/9.6.8/firebase-messaging-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.8.4/firebase-messaging-compat.js');
 importScripts('./_config/firebase-options-compat.js');
 
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall
