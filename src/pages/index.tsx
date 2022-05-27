@@ -117,8 +117,14 @@ export default function Home({
 		// Cleanup
 		return () => {
 			ScrollTrigger.removeEventListener('refreshInit', stRefreshRefreshInitListener);
-			scrollTriggerRef.current?.disable();
-			scrollTriggerRef.current?.kill();
+			// Disable all ST functionality and remove internal listeners:
+			// should be done because it's being used only on this page, and
+			// NextJS/Preact routes to other pages.
+			// Note #1: `ScrollTrigger.enable()` needs to be called before setup
+			// Note #2: we don't need to call `scrollTriggerRef.current?.kill()`
+			//          because it's done internally (for each trigger)
+			// Note #3: trigger's `kill()` calls `disable()` internally
+			ScrollTrigger.disable(true, true);
 			scrollTriggerRef.current = undefined;
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -148,6 +154,7 @@ export default function Home({
 
 	const setupScrollTrigger = useCallback(() => {
 		if (!scrollTriggerRef.current) {
+			ScrollTrigger.enable(); // must be called first
 			scrollTriggerRef.current = ScrollTrigger.create({
 				trigger: `#${styles.scroller}`,
 				toggleClass: 'active',
