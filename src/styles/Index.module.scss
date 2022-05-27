@@ -92,7 +92,7 @@
 		}
 
 		// Desktop UI
-		@media(min-width: 640px) {
+		@screen sm {
 			padding: 20% 0;
 		}
 
