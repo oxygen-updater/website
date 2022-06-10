@@ -489,7 +489,7 @@ export default function Home({
 				<p className="text-xs">
 					Note: none of these reviews were written/promoted in exchange of favour. If you contact us with a request of featuring your review, we will immediately get in touch with Google and tell them to delete it, since it doesn&apos;t just go against our principles of integrity, but also against their
 					{' '}
-					<ExternalLink href="https://play.google.com/store/apps/details?id=com.arjanvlek.oxygenupdater&showAllReviews=true">
+					<ExternalLink href="https://play.google.com/about/comment-posting-policy/">
 						Comment Posting Policy
 					</ExternalLink>
 					.
