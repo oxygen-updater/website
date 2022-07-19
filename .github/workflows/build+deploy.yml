@@ -43,7 +43,7 @@ jobs:
           ${{ secrets.FILE_ENV_CMDRC_JS }}
           EOF
           npm install
-          npm audit fix
+          npm audit fix --audit-level=none
           npx next telemetry disable
           npm run build:prod
           npm run build:test
