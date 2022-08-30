@@ -18,7 +18,7 @@ export const introItemList: IntroItem[] = [{
 }, {
 	image: 'downloading',
 	crop: 'bottom',
-	h2: `In-built download manager`,
+	h2: `Built-in download manager`,
 	p: [
 		`The app has a robust download mechanism, and it always downloads official updates <strong>directly from OnePlus/Google servers</strong>. Assuming you have a sufficiently fast & stable internet connection, high speeds are almost always a guarantee.`,
 		`The app <strong>automatically reports download failures</strong> to our team members, so that we can investigate & fix things if possible.`,
@@ -69,7 +69,7 @@ export const introItemList: IntroItem[] = [{
 }, {
 	image: 'theme',
 	crop: 'bottom',
-	h2: `In-built themes`,
+	h2: `Built-in themes`,
 	p: [
 		`<strong>Light</strong> & <strong>Dark</strong> themes, which are meticulously designed for the best possible experience (e.g. proper contrast ratios adhering to WCAG 2.0, no AMOLED black smear, etc).`,
 		`There's also an option to use the <strong>System</strong>'s dark mode configuration if available (default), as well as an <strong>Auto</strong> theme: switches between light/dark based on time of day (to prevent eye strain at night), or based on battery percentage (dark themes generally help reduce battery usage).`,
