@@ -275,7 +275,7 @@ export default function Article({ article }: Props) {
 						<section className={styles.notice + ' dark:text-amber-400'}>
 							<button>
 								<FontAwesomeIcon icon={faCircleExclamation} />
-								<span>This article is more than 2 months old, so the information presented here may be out-of-date.</span>
+								<span>This article has not been edited recently, so some information presented here may be outdated.</span>
 							</button>
 						</section> : ''}
 
