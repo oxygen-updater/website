@@ -6,4 +6,5 @@ export interface DeviceLatestVersions extends IdAndName {
 
 export interface UpdateMethodLatestVersion extends IdAndName {
 	version: string
+	date: string
 }

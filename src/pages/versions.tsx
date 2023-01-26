@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next';
 import { useCallback, useEffect, useRef } from 'preact/hooks';
 import type { ChangeEvent } from 'react';
+import TimeAgo from 'react-timeago';
 import DefaultHead from 'src/components/default-head';
 import type { DeviceLatestVersions } from 'src/models/response/versions.interface';
 import styles from 'src/styles/Versions.module.scss';
@@ -58,7 +59,17 @@ export default function LatestVersions({ latestVersions }: Props) {
 						{device.updateMethods.map((method, methodIndex) =>
 							<div key={method.id}>
 								<span>{method.name}</span>
-								<span>{method.version}</span>
+								<span>
+									{method.version}
+									{' '}
+									{method.date ?
+										<small title={method.date}>
+											(
+											<TimeAgo date={method.date} />
+											)
+										</small>
+										: ''}
+								</span>
 							</div>
 						)}
 					</>
