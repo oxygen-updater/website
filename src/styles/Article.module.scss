@@ -102,8 +102,8 @@ $fontSizeToLineHeight: (
 				p,
 				ol,
 				ul {
-					// 14px because that's `.typography`'s font-size
-					line-height: map.get($fontSizeToLineHeight, 14px);
+					@apply #{'sm:text-base'};
+					@apply leading-7 #{'sm:leading-8'};
 				}
 
 				ol,
