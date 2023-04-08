@@ -66,9 +66,9 @@ export default function Navbar() {
 		>
 			<div className="container flex items-center px-4 h-16">
 				<Link href="/">
-					<a className="btn font-display font-bold text-xl -ml-5 hover:!bg-transparent">
+					<a className="btn font-display font-bold text-xl -ms-5 hover:!bg-transparent">
 						<Logo size={32} />
-						<span className="ml-2 hidden sm:block">Oxygen Updater</span>
+						<span className="ms-2 hidden sm:block">Oxygen Updater</span>
 					</a>
 				</Link>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
 
 				{/* eslint-disable-next-line react/jsx-no-target-blank */}
 				<a
-					className="btn play-store font-medium border-primary ml-4"
+					className="btn play-store font-medium border-primary ms-4"
 					href="https://play.google.com/store/apps/details?id=com.arjanvlek.oxygenupdater&utm_source=website-nav"
 					target="_blank"
 					rel="noopener"
@@ -107,7 +107,7 @@ export default function Navbar() {
 				</a>
 
 				<button
-					className="ml-2 -mr-1 icon"
+					className="ms-2 -me-1 icon"
 					title="Switch themes"
 					onClick={toggleTheme}
 				>

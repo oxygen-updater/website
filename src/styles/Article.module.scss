@@ -41,7 +41,7 @@ $fontSizeToLineHeight: (
 					@apply flex flex-wrap gap-y-2 items-center;
 
 					> button {
-						@apply -ml-3;
+						@apply -ms-3;
 					}
 
 					small > time {
@@ -69,7 +69,7 @@ $fontSizeToLineHeight: (
 
 					> div:last-child {
 						@apply flex flex-grow #{'sm:flex-initial'} justify-between;
-						@apply -ml-3;
+						@apply -ms-3;
 					}
 				}
 			}
@@ -102,8 +102,8 @@ $fontSizeToLineHeight: (
 				p,
 				ol,
 				ul {
-					@apply #{'sm:text-base'};
-					@apply leading-7 #{'sm:leading-8'};
+					@apply leading-7;
+					@apply #{'sm:text-base/8'};
 				}
 
 				ol,
@@ -126,7 +126,7 @@ $fontSizeToLineHeight: (
 	@apply text-amber-700;
 
 	> button {
-		@apply -ml-4;
+		@apply -ms-4;
 		@apply cursor-default;
 		@apply border-0 #{'hover:bg-transparent'};
 	}

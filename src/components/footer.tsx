@@ -18,7 +18,7 @@ export default function Footer() {
 					{iconItemList.map(item =>
 						<li
 							key={item.url}
-							className="inline-block mr-6 last:mr-0"
+							className="inline-block me-6 last:me-0"
 						>
 							{/* eslint-disable-next-line react/jsx-no-target-blank */}
 							<a
@@ -39,7 +39,7 @@ export default function Footer() {
 						key={routerPath.href}
 						href={routerPath.href}
 					>
-						<a className="text-xs mr-4">{routerPath.text}</a>
+						<a className="text-xs me-4">{routerPath.text}</a>
 					</Link>
 				)}
 

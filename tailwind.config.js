@@ -256,7 +256,6 @@ const config = {
 		filter: false,
 	},
 	plugins: [
-		require('@tailwindcss/line-clamp'),
 		// Override preflight defaults: https://tailwindcss.com/docs/preflight
 		plugin(({ addBase, theme }) => addBase({
 			'html, body': {

@@ -15,12 +15,12 @@
 
 			// Update method
 			&:first-child {
-				@apply pl-4;
+				@apply ps-4;
 			}
 
 			// Latest version
 			&:last-child {
-				@apply pr-4 py-4 font-mono col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
+				@apply pe-4 py-4 font-mono col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
 			}
 		}
 	}

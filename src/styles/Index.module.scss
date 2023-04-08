@@ -41,7 +41,7 @@
 		// Version & size
 		> p:first-of-type {
 			@apply font-mono;
-			@apply ml-1;
+			@apply ms-1;
 			@apply h-5;
 
 			// Tagline
@@ -53,7 +53,7 @@
 					@apply flex flex-wrap items-center gap-y-2;
 
 					> a {
-						@apply mr-4;
+						@apply me-4;
 						@apply #{'!border-none'};
 					}
 
@@ -140,7 +140,7 @@
 
 		> img {
 			@apply rounded-full;
-			@apply mr-4;
+			@apply me-4;
 		}
 
 		// Author, rating, timestamp
@@ -155,7 +155,7 @@
 			// Timestamp
 			> span {
 				@apply text-xs text-fg-variant;
-				@apply ml-2;
+				@apply ms-2;
 			}
 		}
 

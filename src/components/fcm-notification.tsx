@@ -73,7 +73,7 @@ export default function FcmNotification({ onNewArticle }: Props) {
 
 				<div className="flex">
 					<button
-						className="icon -ml-1"
+						className="icon -ms-1"
 						onClick={requestPermission}
 					>
 						<FontAwesomeIcon
@@ -82,7 +82,7 @@ export default function FcmNotification({ onNewArticle }: Props) {
 						/>
 					</button>
 					<button
-						className="icon -mr-1"
+						className="icon -me-1"
 						onClick={hideClicked}
 					>
 						<FontAwesomeIcon icon={faXmark} />
