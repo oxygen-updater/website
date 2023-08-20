@@ -3,3 +3,6 @@ Disallow: /admin
 Disallow: /kiosk
 Disallow: /api
 Allow: /api/v*/news-content/*
+
+User-agent: GPTBot
+Disallow: /
