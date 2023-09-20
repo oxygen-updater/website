@@ -58,8 +58,8 @@ jobs:
           echo "${{ secrets.SSH_TESTING_PRIVATE_KEY }}" > ~/.ssh/test_ed25519
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           chmod 600 ~/.ssh/prod_ed25519 ~/.ssh/test_ed25519 ~/.ssh/config
-          echo -e "Host prod-server\n\tHostName ${{ secrets.SSH_PRODUCTION_HOST }}\n\tUser ${{ secrets.SSH_PRODUCTION_USERNAME }}\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
-          echo -e "Host test-server\n\tHostName ${{ secrets.SSH_TESTING_HOST }}\n\tUser ${{ secrets.SSH_TESTING_USERNAME }}\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
+          echo -e "Host prod-server\n\tHostName ${{ secrets.SSH_PRODUCTION_HOST }}\n\tPort ${{ secrets.SSH_PRODUCTION_PORT }}\n\tUser ${{ secrets.SSH_PRODUCTION_USERNAME }}\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
+          echo -e "Host test-server\n\tHostName ${{ secrets.SSH_TESTING_HOST }}\n\tPort ${{ secrets.SSH_TESTING_PORT }}\n\tUser ${{ secrets.SSH_TESTING_USERNAME }}\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
 
       - name: Stage to servers & deploy
         env:
