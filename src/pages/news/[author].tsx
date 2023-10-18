@@ -129,7 +129,7 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 	const baseUrl = process.env.API_BASE_URL!;
 	const author = params?.author;
 	const authorForApi = author && author !== 'all' ? author : '';
-	const newsList = await (
+	const articles = await (
 		await fetch(`${baseUrl}?author=${authorForApi}`, {
 			method: 'POST',
 			body: JSON.stringify({
@@ -140,21 +140,21 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 
 	if (author === 'all') {
 		// Must be done before the `for` block to avoid including `ad`s
-		createAtomFeed(newsList);
+		createAtomFeed(articles);
 	}
 
-	const articles: Article[] = [];
-	newsList.forEach((article, index) => {
-		articles.push(article);
-		// Insert an ad entry after every 5 elements
-		// Note: if changed, update the "count articles ignoring `ad` entries" formula
-		if ((index + 1) % 5 === 0) {
-			articles.push({
-				id: 100001 + index,
-				ad: true,
-			});
-		};
-	});
+	// Insert ad entries after every 5 items, but only if we have at least 5 articles
+	// Note: if changed, update the "count articles ignoring `ad` entries" formula
+	const length = articles.length;
+	const adIndexLimit = length + Math.floor(length / 5);
+	let nextAdIndex = 5;
+	if (length >= 5) while (nextAdIndex <= adIndexLimit) {
+		articles.splice(nextAdIndex, 0, {
+			id: 100001 + nextAdIndex,
+			ad: true,
+		});
+		nextAdIndex += 6; // move to next
+	}
 
 	let authorTopArticles: Article[] | null = null;
 	if (authorForApi) {
@@ -179,7 +179,7 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
 	};
 };
 
-const createAtomFeed = async (newsList: Article[]) => {
+const createAtomFeed = async (articles: Article[]) => {
 	const domainPrefix = process.env.NEXT_PUBLIC_DOMAIN_PREFIX;
 	const newsLink = `${domainPrefix}/news/all/`;
 	const file = 'all.xml';
@@ -199,7 +199,7 @@ const createAtomFeed = async (newsList: Article[]) => {
 <logo>${domainPrefix}/img/favicon/android-chrome-512x512.png?v=1</logo>
 <icon>${domainPrefix}/favicon.ico?v=1</icon>
 <rights>${copyright}</rights>
-` + newsList.reduce((accumulator, article) => {
+` + articles.reduce((accumulator, article) => {
 		const url = `${domainPrefix}/article/${article.id}/`;
 		const hyphenatedAuthor = article.author?.replace(/ /g, '-') ?? 'all';
 		const image = article.image ?? defaultImage;
