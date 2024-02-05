@@ -73,5 +73,6 @@ export const introItemList: IntroItem[] = [{
 	p: [
 		`<strong>Light</strong> & <strong>Dark</strong> themes, which are meticulously designed for the best possible experience (e.g. proper contrast ratios adhering to WCAG 2.0, no AMOLED black smear, etc).`,
 		`There's also an option to use the <strong>System</strong>'s dark mode configuration if available (default), as well as an <strong>Auto</strong> theme: switches between light/dark based on time of day (to prevent eye strain at night), or based on battery percentage (dark themes generally help reduce battery usage).`,
+		`Moreover, integrating with <strong>Material You/Monet on Android 12+</strong> allows adapting the entire app — even the icon — to your device wallpaper, giving a homogenous feel with the rest of the system.`,
 	],
 }];

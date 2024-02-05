@@ -297,7 +297,7 @@ export default function Home({
 							key={item.image}
 							id={'image-' + item.image}
 							className={styles.screenshot}
-							href={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=1`}
+							href={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=2`}
 							width="100%"
 							height="calc(100% - 16px)"
 							x="-0.5"
@@ -418,7 +418,7 @@ export default function Home({
 								<img
 									loading="lazy"
 									decoding="async"
-									src={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=1`}
+									src={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=2`}
 									alt={item.image}
 									style={{ objectPosition: item.crop }}
 								/>
