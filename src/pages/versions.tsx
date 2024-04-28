@@ -61,12 +61,11 @@ export default function LatestVersions({ latestVersions }: Props) {
 								<span>{method.name}</span>
 								<span>
 									{method.version}
-									{' '}
-									{method.date ?
-										<small title={method.date}>
-											(
+									{method.code || method.date ?
+										<small>
+											{method.code}
+											{method.code && method.date ? <> • </> : ''}
 											<TimeAgo date={method.date} />
-											)
 										</small>
 										: ''}
 								</span>

@@ -20,7 +20,20 @@
 
 			// Latest version
 			&:last-child {
-				@apply pe-4 py-4 font-mono col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
+				@apply pe-4 py-4 font-mono;
+				@apply col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
+				@apply inline-flex items-center;
+
+				// OTA version code & insert date
+				> small {
+					&::before {
+						content: '\a0(';
+					}
+
+					&::after {
+						content: ')';
+					}
+				}
 			}
 		}
 	}
