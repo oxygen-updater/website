@@ -24,7 +24,7 @@
 	},
 	"//": "To fix `Error: Parsing error: DeprecationError: 'originalKeywordKind' has been deprecated since v5.0.0 and can no longer be used. Use 'identifierToKeywordKind(identifier)' instead.` when upgrading to TypeScript 5.2",
 	"dependencies": {
-		"firebase": "^10.8.0",
+		"firebase": "^10.12.2",
 		"gsap": "^3.12.5",
 		"next": "^12.3.4",
 		"preact": "^10.19.3",
