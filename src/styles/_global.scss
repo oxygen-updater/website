@@ -12,9 +12,9 @@ body {
 
 	// Desktop UI
 	@screen sm {
-		background-attachment: scroll, fixed;
-		background-position: top left, center center;
-		background-size: auto, cover;
+		background-attachment: scroll;
+		background-position: top left;
+		background-size: auto;
 		background-image: var(--bg-image);
 	}
 
@@ -28,7 +28,7 @@ body {
 		--border: rgba(0, 0, 0, .12);
 		--overlay: rgba(245, 245, 245, .75);
 
-		--bg-image: url('/img/bg/overlay.png?v=1'), url('/img/bg/light.svg?v=1');
+		--bg-image: url('/img/bg/overlay.png?v=1');
 
 		// The following line is still a draft at the time of writing.
 		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
@@ -45,7 +45,7 @@ body {
 		--border: rgba(255, 255, 255, .12);
 		--overlay: rgba(29, 29, 29, .75);
 
-		--bg-image: url('/img/bg/overlay.png?v=1'), url('/img/bg/dark.svg?v=1');
+		--bg-image: url('/img/bg/overlay.png?v=1');
 
 		// The following line is still a draft at the time of writing.
 		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
@@ -88,8 +88,8 @@ code {
 	// Desktop UI
 	@screen sm {
 		background-attachment: fixed;
-		background-position: top left, center center;
-		background-size: auto, cover;
+		background-position: top left;
+		background-size: auto;
 
 		// Make nav's background the same as body, so that it appears seamless
 		background-image: var(--bg-image);
