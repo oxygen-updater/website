@@ -1,3 +1,4 @@
 {
 	"scss.lint.unknownAtRules": "ignore",
+	"eslint.useFlatConfig": false,
 }
