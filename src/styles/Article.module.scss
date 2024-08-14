@@ -31,7 +31,7 @@ $fontSizeToLineHeight: (
 
 					// Subtitle
 					+ div {
-						@apply mb-4;
+						@apply mb-8;
 						@apply text-fg-variant text-sm #{'sm:text-base'} #{'lg:text-lg'} #{'xl:text-xl'};
 					}
 				}
