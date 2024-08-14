@@ -2,6 +2,7 @@ import Script from 'next/script';
 import { useCallback, useLayoutEffect, useRef } from 'preact/hooks';
 import { useTheme } from 'src/hooks/theme';
 import { KEY_THEME_DARK } from 'src/models/theme.type';
+import UniqueBeforeInteractiveScript from './unique.script';
 
 const DEFAULT_CLASS = 'adsbygoogle !block';
 
@@ -88,7 +89,7 @@ export default function GoogleAdsense({ type }: Props) {
 
 	return (
 		<>
-			<Script
+			<UniqueBeforeInteractiveScript
 				key=".$adsense-script"
 				strategy="beforeInteractive"
 				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1816831161514116"
