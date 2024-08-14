@@ -12,10 +12,6 @@ const nextConfig = {
 	sassOptions: {
 		includePaths: ['./src/styles'],
 	},
-	typescript: {
-		// Because we use Preact (NextJS uses React & its typedefs)
-		ignoreBuildErrors: true,
-	},
 	compiler: {
 		// Remove `^data-test` properties (used by Selenium etc as a selector)
 		reactRemoveProperties: true,

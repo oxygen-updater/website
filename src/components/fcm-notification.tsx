@@ -4,7 +4,7 @@ import { getToken, isSupported, onMessage } from '@firebase/messaging';
 import { faBell, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getMessaging } from 'firebase/messaging';
-import type { StateUpdater } from 'preact/hooks';
+import type { Dispatch, StateUpdater } from 'preact/hooks';
 import { useCallback, useEffect, useState } from 'preact/hooks';
 import { firebaseOptions } from 'public/_config/firebase-options';
 import type { Article } from 'src/models/response/article.interface';
@@ -122,7 +122,7 @@ const onForegroundMessage = (
 	}
 };
 
-type SetPermission = StateUpdater<NotificationPermission | undefined>;
+type SetPermission = Dispatch<StateUpdater<NotificationPermission | undefined>>;
 
 const ensureServiceWorkerIsRegistered = (
 	messaging: Messaging,

@@ -134,6 +134,7 @@ export default class MyDocument extends Document {
 					<link
 						rel="mask-icon"
 						href="/img/favicon/safari-pinned-tab.svg?v=1"
+						// @ts-ignore
 						color="#f50514"
 					/>
 					<link
@@ -171,6 +172,7 @@ export default class MyDocument extends Document {
 						rel="dns-prefetch"
 						href="https://fonts.googleapis.com"
 					/>
+					{/* eslint-disable-next-line @next/next/google-font-preconnect */}
 					<link
 						rel="dns-prefetch"
 						href="https://fonts.gstatic.com"
