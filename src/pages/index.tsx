@@ -218,7 +218,8 @@ export default function Home({
 		}
 
 		const parentContainerWidth = document.getElementById(styles.scrollerRight)?.offsetWidth || document.body.offsetWidth;
-		const deviceContainerWidth = document.getElementById('device-0')?.offsetWidth || 200;
+		const firstDeviceEl = document.getElementsByClassName(styles.groupedDevice).item(0) as HTMLElement | null;
+		const deviceContainerWidth = firstDeviceEl?.offsetWidth || 200;
 		const columnsPerRow = Math.floor(parentContainerWidth / deviceContainerWidth);
 		if (columnsPerRow === 1) {
 			// Perf: padding isn't needed if there's only one column
