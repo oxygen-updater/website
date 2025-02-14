@@ -80,8 +80,27 @@ const config = {
 			},
 		},
 	},
+	// Remove unnecessary `--tw-` definitions in the `*, ::before, ::after` block
 	corePlugins: {
+		backdropFilter: false,
+		borderSpacing: false,
+		boxShadow: false,
+		boxShadowColor: false,
+		contain: false,
+		dropShadow: false,
 		filter: false,
+		fontVariantNumeric: false,
+		gradientColorStops: false,
+		ringColor: false,
+		ringOpacity: false,
+		ringOffsetColor: false,
+		ringOffsetWidth: false,
+		ringWidth: false,
+		scrollSnapAlign: false,
+		scrollSnapStop: false,
+		scrollSnapType: false,
+		touchAction: false,
+		transform: false,
 	},
 	plugins: [
 		// Override preflight defaults: https://tailwindcss.com/docs/preflight
