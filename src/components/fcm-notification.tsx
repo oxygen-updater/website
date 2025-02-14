@@ -77,7 +77,7 @@ export default function FcmNotification({ onNewArticle }: Props) {
 						onClick={requestPermission}
 					>
 						<FontAwesomeIcon
-							className="text-green-500 dark:text-green-400"
+							className="text-positive"
 							icon={faBell}
 						/>
 					</button>

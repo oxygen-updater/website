@@ -272,7 +272,7 @@ export default function Article({ article }: Props) {
 					<GoogleAdsense type="inarticle" />
 
 					{showOutdatedNotice ?
-						<section className={styles.notice + ' dark:text-amber-400'}>
+						<section className={styles.notice}>
 							<button>
 								<FontAwesomeIcon icon={faCircleExclamation} />
 								<span>This article has not been edited recently, so some information presented here may be outdated.</span>

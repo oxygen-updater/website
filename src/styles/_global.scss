@@ -22,11 +22,14 @@ body {
 		--primary: #f50514;
 		--bg: white;
 		--fg: #212121;
-		--fg-variant: rgba(0, 0, 0, .75);
-		--bg-variant: rgba(0, 0, 0, .12);
-		--hover: rgba(0, 0, 0, .04);
-		--border: rgba(0, 0, 0, .12);
-		--overlay: rgba(245, 245, 245, .75);
+		--fg-variant: rgba(0, 0, 0, 0.75);
+		--bg-variant: rgba(0, 0, 0, 0.12);
+		--hover: rgba(0, 0, 0, 0.04);
+		--border: rgba(0, 0, 0, 0.12);
+		--overlay: rgba(245, 245, 245, 0.75);
+		--positive: #038b00; // Angular Material green-palette 50
+		--warning: #b1b100; // Angular Material yellow-palette 70
+		--error: #ba1a1a; // Angular Material error-palette 40
 
 		--bg-image: url('/img/bg/overlay.png?v=1');
 
@@ -39,11 +42,14 @@ body {
 		--primary: #ff3d39;
 		--bg: #121212;
 		--fg: white;
-		--fg-variant: rgba(255, 255, 255, .75);
-		--bg-variant: rgba(33, 33, 33, .75);
-		--hover: rgba(255, 255, 255, .04);
-		--border: rgba(255, 255, 255, .12);
-		--overlay: rgba(29, 29, 29, .75);
+		--fg-variant: rgba(255, 255, 255, 0.75);
+		--bg-variant: rgba(33, 33, 33, 0.75);
+		--hover: rgba(255, 255, 255, 0.04);
+		--border: rgba(255, 255, 255, 0.12);
+		--overlay: rgba(29, 29, 29, 0.75);
+		--positive: #cbffb8; // Angular Material green-palette 95
+		--warning: #cdcd00; // Angular Material yellow-palette 80
+		--error: #ffb4ab; // Angular Material error-palette 80
 
 		--bg-image: url('/img/bg/overlay.png?v=1');
 
@@ -55,15 +61,14 @@ body {
 
 a.external::after {
 	content: '\a0\2197'; // &nbsp;↗
-	opacity: .75;
+	opacity: 0.75;
 }
 
 code {
-
 	&::before,
 	&::after {
 		content: '`';
-		opacity: .75;
+		opacity: 0.75;
 	}
 }
 
@@ -101,7 +106,7 @@ code {
 }
 
 // Desktop UI
-@media(min-width: 426px) {
+@media (min-width: 426px) {
 	.btn.play-store > span {
 		display: inline;
 	}

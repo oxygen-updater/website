@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 // To reduce text busyness, line-height (LH) should follow font-size (FS):
 $fontSizeToLineHeight: (
@@ -60,7 +60,7 @@ $fontSizeToLineHeight: (
 						}
 
 						// Mobile UI
-						@media(max-width: 339px) {
+						@media (max-width: 339px) {
 							&:first-of-type {
 								display: none;
 							}
@@ -89,7 +89,6 @@ $fontSizeToLineHeight: (
 			overflow-x: overlay !important;
 
 			> {
-
 				p > {
 
 					img,
@@ -123,7 +122,7 @@ $fontSizeToLineHeight: (
 .notice {
 	@apply flex items-center;
 	@apply px-6 pt-4;
-	@apply text-amber-700;
+	@apply text-warning;
 
 	> button {
 		@apply -ms-4;

@@ -12,10 +12,7 @@ export default function Custom404() {
 	return (
 		<div className={styles.host}>
 			<section>
-				<FontAwesomeIcon
-					icon={faFaceFrown}
-					className="dark:!text-red-400"
-				/>
+				<FontAwesomeIcon icon={faFaceFrown} />
 
 				<div>
 					<h1>404 &bull; Not Found</h1>
