@@ -1,40 +1,34 @@
 .host {
-
-	// Device name
-	> h2 {
-		@apply mt-4 mb-0;
-	}
+	@apply overflow-x-auto; // horizontally scrollable
 
 	> div {
 		@apply grid gap-4 items-center;
-		@apply grid-cols-3 #{'lg:grid-cols-4'} #{'xl:grid-cols-5'} #{'2xl:grid-cols-6'};
-		@apply transition-[background-color] #{'hover:bg-hover'};
+		// 5 columns: 1 for device name, the other 4 for regions (EU, GLO, IN, NA).
+		// Each cell is at least 215px wide, which comfortably fits the longest device name — "OnePlus Nord CE 4 Lite".
+		grid-template-columns: repeat(5, minmax(215px, 1fr));
 
-		> span {
+		// Device name
+		> h2 {
+			@apply mb-0;
+		}
+
+		// Row cells
+		> div {
 			@apply py-4;
+		}
 
-			// Update method
-			&:first-child {
-				@apply ps-4;
-			}
+		// Update method
+		> strong:first-child {
+			@apply ps-4; // indent
+		}
 
-			// Latest version
-			&:last-child {
-				@apply pe-4 py-4 font-mono;
-				@apply col-span-2 #{'lg:col-span-3'} #{'xl:col-span-4'} #{'2xl:col-span-5'};
-				@apply inline-flex items-center;
+		// Version data
+		> strong ~ div {
+			@apply font-mono;
+		}
 
-				// OTA version code & insert date
-				> small {
-					&::before {
-						content: '\a0(';
-					}
-
-					&::after {
-						content: ')';
-					}
-				}
-			}
+		div.\!hidden + hr {
+			@apply hidden;
 		}
 	}
 }

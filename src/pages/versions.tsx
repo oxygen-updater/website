@@ -8,7 +8,7 @@ import styles from 'src/styles/Versions.module.scss';
 import { TITLE } from './_document';
 
 interface Props {
-	latestVersions: DeviceLatestVersions[]
+	latestVersions: DeviceLatestVersions
 }
 
 export default function LatestVersions({ latestVersions }: Props) {
@@ -39,7 +39,7 @@ export default function LatestVersions({ latestVersions }: Props) {
 		<>
 			<DefaultHead title={`Versions • ${TITLE}`} />
 
-			<div className="flex flex-wrap gap-4 mb-4">
+			<div className="flex flex-wrap gap-4 mb-8">
 				<h1 className="mb-0">Latest OxygenOS versions in the app</h1>
 
 				<input
@@ -52,27 +52,51 @@ export default function LatestVersions({ latestVersions }: Props) {
 
 			<section className={styles.host}>
 
-				{latestVersions.map((device, deviceIndex) =>
-					<>
-						<h2>{device.name}</h2>
+				{Object.keys(latestVersions).map(deviceName => {
+					const device = latestVersions[deviceName];
 
-						{device.updateMethods.map((method, methodIndex) =>
-							<div key={method.id}>
-								<span>{method.name}</span>
-								<span>
-									{method.version}
-									{method.code || method.date ?
-										<small>
-											{method.code}
-											{method.code && method.date ? <> • </> : ''}
-											<TimeAgo date={method.date} />
-										</small>
-										: ''}
-								</span>
+					return (
+						<>
+							<div>
+								<h2>{deviceName}</h2>
+
+								{device.variants.map(variant => <strong key={variant.id}>{variant.name}</strong>)}
 							</div>
-						)}
-					</>
-				)}
+
+							{device.methods.map(method => {
+								const methodKey = `${method.id}`;
+
+								return (
+									<div key={methodKey}>
+										<strong>{method.name}</strong>
+
+										{device.variants.map(variant => {
+											const variantKey = `${variant.id}`;
+											const data = (device.data[methodKey] ?? {})[variantKey] ?? {};
+
+											return (
+												<div key={variant.id}>
+													<div>{data.version || '<unknown>'}</div>
+
+													{data.code || data.date ?
+														<small>
+															{data.code}
+															{data.code && data.date ? <> • </> : ''}
+															<TimeAgo date={data.date} />
+														</small>
+														: ''}
+												</div>
+											);
+										})}
+									</div>
+								);
+							})}
+
+							{/* Divider */}
+							<hr />
+						</>
+					);
+				})}
 			</section>
 		</>
 	);
@@ -100,7 +124,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 				type: process.env.API_TYPE_LATEST_VERSIONS,
 			}),
 		})
-	).json() as DeviceLatestVersions[];
+	).json() as DeviceLatestVersions;
 
 	return {
 		props: {
