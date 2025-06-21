@@ -2,10 +2,11 @@
 	@apply overflow-x-auto; // horizontally scrollable
 
 	> div {
-		@apply grid gap-4 items-center;
-		// 5 columns: 1 for device name, the other 4 for regions (EU, GLO, IN, NA).
+		@apply grid grid-flow-col gap-4 items-center;
+		@apply overflow-x-auto;
+
 		// Each cell is at least 215px wide, which comfortably fits the longest device name — "OnePlus Nord CE 4 Lite".
-		grid-template-columns: repeat(5, minmax(215px, 1fr));
+		grid-auto-columns: 215px;
 
 		// Device name
 		> h2 {
