@@ -405,7 +405,7 @@ export default function Home({
 									alt={device.name}
 								/>
 								<span>{device.name}</span>
-								{device.qualifiers?.length > 0 ? <small>{device.qualifiers.join('\u00a0•\u00a0')}</small> : ''}
+								{device.qualifiers?.length > 0 ? <small>{device.qualifiers.join(' • ')}</small> : ''}
 							</div>
 						)}
 
