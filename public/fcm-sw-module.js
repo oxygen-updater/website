@@ -1,6 +1,6 @@
 // Ensure Firebase version is synced with package.json
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js';
-import { getMessaging, isSupported, onBackgroundMessage } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-messaging-sw.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js';
+import { getMessaging, isSupported, onBackgroundMessage } from 'https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging-sw.js';
 import { firebaseOptions } from './_config/firebase-options.js';
 
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall

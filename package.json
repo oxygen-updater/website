@@ -24,8 +24,8 @@
 	},
 	"//": "Ensure firebase version is synced with public/fcm-sw.js",
 	"dependencies": {
-		"firebase": "^11.3.1",
-		"gsap": "^3.12.7",
+		"firebase": "^11.9.1",
+		"gsap": "^3.13.0",
 		"next": "^12.3.4",
 		"preact": "^10.25.4",
 		"react": "npm:@preact/compat@^18.3.1",
@@ -41,18 +41,18 @@
 		"@tailwindcss/line-clamp": "^0.4.4",
 		"@types/react": "^17.0.83",
 		"@types/react-timeago": "^4.1.7",
-		"autoprefixer": "^10.4.20",
-		"cssnano": "^7.0.6",
-		"dompurify": "^3.2.4",
+		"autoprefixer": "^10.4.21",
+		"cssnano": "^7.0.7",
+		"dompurify": "^3.2.6",
 		"env-cmd": "^10.1.0",
 		"eslint": "^8.57.1",
 		"eslint-config-next": "^12.3.4",
-		"isomorphic-dompurify": "^2.22.0",
+		"isomorphic-dompurify": "^2.25.0",
 		"next-plugin-preact": "^3.0.7",
-		"postcss": "^8.5.3",
+		"postcss": "^8.5.6",
 		"preact-render-to-string": "^6.5.13",
-		"sass": "^1.85.1",
+		"sass": "^1.89.2",
 		"tailwindcss": "^3.4.17",
-		"typescript": "^5.7.3"
+		"typescript": "^5.8.3"
 	}
 }
