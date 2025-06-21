@@ -1,7 +1,7 @@
 {
 	"name": "Oxygen Updater",
 	"short_name": "Oxygen Updater",
-	"description": "Oxygen Updater is an open-source app for OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!",
+	"description": "Oxygen Updater is an open-source app for OPPO/OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!",
 	"theme_color": "#f50514",
 	"background_color": "#f50514",
 	"display": "standalone",

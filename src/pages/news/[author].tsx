@@ -195,7 +195,7 @@ const createAtomFeed = async (articles: Article[]) => {
 <generator>${TITLE}</generator>
 <updated>${new Date().toISOString()}</updated>
 <title>News • ${TITLE}</title>
-<subtitle>Oxygen Updater is an open-source app for OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free! We regularly publish news articles informing our users about OnePlus-related things, including helpful guides and project updates.</subtitle>
+<subtitle>Oxygen Updater is an open-source app for OPPO/OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free! We regularly publish news articles informing our users about OPPO/OnePlus-related things, including helpful guides and project updates.</subtitle>
 <logo>${domainPrefix}/img/favicon/android-chrome-512x512.png?v=1</logo>
 <icon>${domainPrefix}/favicon.ico?v=1</icon>
 <rights>${copyright}</rights>
@@ -220,6 +220,7 @@ const createAtomFeed = async (articles: Article[]) => {
 <category term="${TITLE}" label="${TITLE}"/>
 <category term="News" label="News"/>
 <category term="OnePlus" label="OnePlus"/>
+<category term="OPPO" label="OPPO"/>
 <rights>${copyright}</rights>
 </entry>
 `;

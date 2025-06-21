@@ -40,7 +40,7 @@ export default function LatestVersions({ latestVersions }: Props) {
 			<DefaultHead title={`Versions • ${TITLE}`} />
 
 			<div className="flex flex-wrap gap-4 mb-8">
-				<h1 className="mb-0">Latest OxygenOS versions in the app</h1>
+				<h1 className="mb-0">Latest OS versions in the app</h1>
 
 				<input
 					type="text"

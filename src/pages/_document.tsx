@@ -8,7 +8,7 @@ export const DEFAULT_META = (
 		<meta
 			key=".$description"
 			name="description"
-			content="Oxygen Updater is an open-source app for OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!"
+			content="Oxygen Updater is an open-source app for OPPO/OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!"
 		/>
 		<meta
 			key=".$author"
@@ -25,7 +25,7 @@ export const DEFAULT_META = (
 		<meta
 			key=".$og:title"
 			property="og:title"
-			content="Oxygen Updater — skip rollout queues & update your OnePlus device ASAP!"
+			content="Oxygen Updater — skip rollout queues & update your OPPO/OnePlus device ASAP!"
 		/>
 		<meta
 			key=".$og:image"
@@ -36,7 +36,7 @@ export const DEFAULT_META = (
 		<meta
 			key=".$og:description"
 			property="og:description"
-			content="Oxygen Updater is an open-source app for OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!"
+			content="Oxygen Updater is an open-source app for OPPO/OnePlus devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!"
 		/>
 
 		{/* Default Twitter tags */}
@@ -66,7 +66,7 @@ export default class MyDocument extends Document {
 					<meta
 						key=".$keywords"
 						name="keywords"
-						content="Oxygen,OnePlus,OxygenOS,OS,Android,AndroidOS,System,Update,Systemupdate,OTA,Flash,Download,Faster,App"
+						content="Oxygen,OPPO,OnePlus,OxygenOS,ColorOS,OS,Android,AndroidOS,System,Update,Systemupdate,OTA,Flash,Download,Faster,App"
 					/>
 
 					{/* Global Open Graph tags */}
