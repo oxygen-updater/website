@@ -8,10 +8,10 @@ type AdditionalConfig = Config & {
 export function sanitize(html: string, config: AdditionalConfig = {}) {
 	return DOMPurify.sanitize(html, {
 		...config,
-		ADD_ATTR: [
+		ADD_ATTR: Array.isArray(config.ADD_ATTR) ? [
 			'target', // for <a target="_blank">
-			...config.ADD_ATTR ?? [],
-		],
+			...(config.ADD_ATTR ?? []),
+		] : ['target'],
 		USE_PROFILES: { html: true, svg: true },
 		IN_PLACE: true,
 	});
