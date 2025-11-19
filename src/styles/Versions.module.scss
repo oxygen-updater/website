@@ -1,9 +1,18 @@
 .host {
 	@apply overflow-x-auto; // horizontally scrollable
 
+	// Device group
 	> div {
-		@apply grid grid-flow-col gap-4 items-center;
 		@apply overflow-x-auto;
+
+		& + div {
+			@apply border-t border-hover;
+			@apply pt-4;
+		}
+	}
+
+	> div > div {
+		@apply grid grid-flow-col gap-4 items-center;
 
 		// Each cell is at least 215px wide, which comfortably fits the longest device name — "OnePlus Nord CE 4 Lite".
 		grid-auto-columns: 215px;

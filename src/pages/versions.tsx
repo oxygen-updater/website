@@ -56,7 +56,7 @@ export default function LatestVersions({ latestVersions }: Props) {
 					const device = latestVersions[deviceName];
 
 					return (
-						<>
+						<div key={deviceName}>
 							<div>
 								<h2>{deviceName}</h2>
 
@@ -91,10 +91,7 @@ export default function LatestVersions({ latestVersions }: Props) {
 									</div>
 								);
 							})}
-
-							{/* Divider */}
-							<hr />
-						</>
+						</div>
 					);
 				})}
 			</section>
