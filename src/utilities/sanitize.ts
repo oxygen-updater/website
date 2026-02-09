@@ -1,4 +1,5 @@
-import DOMPurify, { Config } from 'isomorphic-dompurify';
+import type { Config } from 'dompurify';
+import { sanitize as domPurifySanitize } from 'isomorphic-dompurify';
 
 type AdditionalConfig = Config & {
 	RETURN_DOM_FRAGMENT?: false
@@ -6,7 +7,7 @@ type AdditionalConfig = Config & {
 };
 
 export function sanitize(html: string, config: AdditionalConfig = {}) {
-	return DOMPurify.sanitize(html, {
+	return domPurifySanitize(html, {
 		...config,
 		ADD_ATTR: Array.isArray(config.ADD_ATTR) ? [
 			'target', // for <a target="_blank">

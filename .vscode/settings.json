@@ -1,4 +1,5 @@
 {
 	"scss.lint.unknownAtRules": "ignore",
 	"eslint.useFlatConfig": false,
+	"js/ts.tsdk.path": "node_modules\\typescript\\lib",
 }

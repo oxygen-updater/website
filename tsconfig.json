@@ -1,6 +1,14 @@
 {
 	"compilerOptions": {
-		"baseUrl": "./",
+		"ignoreDeprecations": "6.0",
+		"paths": {
+			"src/*": [
+				"./src/*",
+			],
+			"public/*": [
+				"./public/*",
+			],
+		},
 		"target": "es6",
 		"lib": [
 			"dom",
