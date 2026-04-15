@@ -298,9 +298,9 @@ export default function Home({
 							key={item.image}
 							id={'image-' + item.image}
 							className={styles.screenshot}
-							href={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=2`}
+							href={`/img/screenshot/${item.image}_${themeSuffix || KEY_THEME_DARK}.webp?v=3`}
 							width="100%"
-							height="calc(100% - 16px)"
+							height="100%"
 							x="-0.5"
 							y="8"
 							clipPath="url(#a)"
