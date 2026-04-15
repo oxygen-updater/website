@@ -1,4 +1,4 @@
-# Oxygen Updater website
+# OS Updater website
 
 [![Build & Deploy][workflow-badge-image]][workflow-badge-link]
 

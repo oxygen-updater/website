@@ -15,7 +15,7 @@ const FCM_SW_SCOPE = '/firebase-cloud-messaging-push-scope';
 const FCM_DB = 'firebase-messaging-database';
 const FCM_OBJECT_STORE = 'firebase-messaging-store';
 
-const firebaseApp = initializeApp(firebaseOptions, 'Oxygen Updater');
+const firebaseApp = initializeApp(firebaseOptions, 'OS Updater');
 
 interface Props {
 	onNewArticle: (article: Article) => void

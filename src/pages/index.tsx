@@ -312,7 +312,7 @@ export default function Home({
 					<header>
 						<Logo size={128} />
 
-						<h1>Oxygen Updater</h1>
+						<h1>OS Updater</h1>
 						<p>
 							v
 							{appInfo.version || '0.0.0'}
@@ -384,7 +384,7 @@ export default function Home({
 					<h2>Be the first to update your OPPO/OnePlus device</h2>
 
 					<p>
-						OPPO/OnePlus, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from OPPO/OnePlus/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so, Oxygen Updater lets you skip the rollout queue and install official updates at your convenience.
+						OPPO/OnePlus, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from OPPO/OnePlus/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so, OS Updater lets you skip the rollout queue and install official updates at your convenience.
 					</p>
 
 					<p className="text-xs">

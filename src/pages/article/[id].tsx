@@ -187,7 +187,7 @@ export default function Article({ article }: Props) {
 									>
 										<a
 											className="!border-b-0"
-											href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&hashtags=OxygenUpdater`}
+											href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&hashtags=OSUpdater`}
 											target="_blank"
 											rel="noopener noreferrer"
 										>

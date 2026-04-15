@@ -68,7 +68,7 @@ export default function Navbar() {
 				<Link href="/">
 					<a className="btn font-display font-bold text-xl -ms-5 hover:!bg-transparent">
 						<Logo size={32} />
-						<span className="ms-2 hidden sm:block">Oxygen Updater</span>
+						<span className="ms-2 hidden sm:block">OS Updater</span>
 					</a>
 				</Link>
 
