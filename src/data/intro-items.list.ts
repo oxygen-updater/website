@@ -13,6 +13,7 @@ export const introItemList: IntroItem[] = [{
 		`OTA version`,
 		`Incremental OS version`,
 		`Security patch date`,
+		`Kernel version`,
 	],
 	note: `you can view the changelog even if you're already on the latest version, in case you forgot what that update brought you.`,
 }, {
@@ -60,10 +61,13 @@ export const introItemList: IntroItem[] = [{
 	li: [
 		`Device name (along with region, if any)`,
 		`Model number`,
-		`RAM configuration`,
-		`SoC & frequency (as reported by the system)`,
 		`Android & OxygenOS/ColorOS version`,
 		`Security patch date`,
+		`Kernel version`,
+		`RAM configuration`,
+		`SoC & frequency (as reported by the system)`,
+		`Screen size (in inches & cm)`,
+		`Camera megapixel counts`,
 	],
 	note: `most software information is also shown on the main screen if you're already up-to-date.`,
 }, {
