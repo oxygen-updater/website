@@ -8,15 +8,14 @@
 	}
 
 	> details {
-
 		// Top <t> articles (last 3 months)
 		> summary {
-			@apply border bg-hover #{'hover:!bg-border'}
+			@apply border bg-bg-variant #{'hover:!bg-hover'};
 		}
 
 		> div {
 			@apply border-l;
-			@apply bg-hover;
+			@apply bg-bg-variant;
 
 			// Background image
 			> article {

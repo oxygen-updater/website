@@ -6,7 +6,7 @@ $fontSizeToLineHeight: (
 	16px: 28px,
 	18px: 32px,
 	20px: 36px,
-	24px: 40px,
+	24px: 40px
 );
 
 .host {
@@ -78,7 +78,6 @@ $fontSizeToLineHeight: (
 		> section:last-child {
 			@apply px-4 pt-4;
 
-			// Draft spec. At the time of writing, implemented only in Firefox.
 			// See https://caniuse.com/mdn-css_properties_scrollbar-width and https://caniuse.com/mdn-css_properties_scrollbar-color
 			scrollbar-width: thin;
 
@@ -90,7 +89,6 @@ $fontSizeToLineHeight: (
 
 			> {
 				p > {
-
 					img,
 					video {
 						@apply inline-block;
@@ -107,7 +105,6 @@ $fontSizeToLineHeight: (
 
 				ol,
 				ul {
-
 					ol,
 					ul {
 						// List-within-list shouldn't leave extra space at the bottom
@@ -121,7 +118,7 @@ $fontSizeToLineHeight: (
 
 .notice {
 	@apply flex items-center;
-	@apply px-6 pt-4;
+	@apply pl-5 pt-4;
 	@apply text-warning;
 
 	> button {

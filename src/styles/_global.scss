@@ -20,40 +20,38 @@ body {
 
 	&.light {
 		--primary: #f50514;
-		--bg: white;
-		--fg: #212121;
-		--fg-variant: rgba(0, 0, 0, 0.75);
-		--bg-variant: rgba(0, 0, 0, 0.12);
-		--hover: rgba(0, 0, 0, 0.04);
-		--border: rgba(0, 0, 0, 0.12);
-		--overlay: rgba(245, 245, 245, 0.75);
-		--positive: #038b00; // Angular Material green-palette 50
-		--warning: #b1b100; // Angular Material yellow-palette 70
-		--error: #ba1a1a; // Angular Material error-palette 40
+		--bg: #faf9ff; // surface
+		--bg-variant: rgb(222, 226, 242, 0.25); // surfaceVariant translucent
+		--fg: #181b25; // onSurface
+		--fg-variant: #424754; // onSurfaceVariant
+		--positive: #3b6939; // positive
+		--warning: #855318; // warn
+		--error: #b3261e; // error
+		--hover: rgb(24, 27, 37, 0.08); // fg translucent
+		--border: #dee2f2; // outlineVariant
+		--overlay: rgb(250, 249, 255, 0.75); // bg translucent
 
 		--bg-image: url('/img/bg/overlay.png?v=1');
 
-		// The following line is still a draft at the time of writing.
 		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
 		color-scheme: light;
 	}
 
 	&.dark {
 		--primary: #ff3d39;
-		--bg: #121212;
-		--fg: white;
-		--fg-variant: rgba(255, 255, 255, 0.75);
-		--bg-variant: rgba(33, 33, 33, 0.75);
-		--hover: rgba(255, 255, 255, 0.04);
-		--border: rgba(255, 255, 255, 0.12);
-		--overlay: rgba(29, 29, 29, 0.75);
-		--positive: #cbffb8; // Angular Material green-palette 95
-		--warning: #cdcd00; // Angular Material yellow-palette 80
-		--error: #ffb4ab; // Angular Material error-palette 80
+		--bg: #0f131c;
+		--bg-variant: rgb(66, 71, 84, 0.25);
+		--fg: #dfe2ef;
+		--fg-variant: #c2c6d6;
+		--positive: #a1d39a;
+		--warning: #fdb975;
+		--error: #f2b8b5;
+		--hover: rgb(223, 226, 239, 0.08);
+		--border: #424754;
+		--overlay: rgb(15, 19, 28, 0.75);
 
 		--bg-image: url('/img/bg/overlay.png?v=1');
 
-		// The following line is still a draft at the time of writing.
 		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
 		color-scheme: dark;
 	}

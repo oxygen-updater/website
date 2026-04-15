@@ -18,7 +18,6 @@
 .overflow-x-auto,
 .overflow-y-auto,
 html {
-	// Draft spec. At the time of writing, implemented only in Firefox.
 	// See https://caniuse.com/mdn-css_properties_scrollbar-width and https://caniuse.com/mdn-css_properties_scrollbar-color
 	scrollbar-width: thin;
 	scrollbar-color: var(--border) transparent;

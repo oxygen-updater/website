@@ -31,7 +31,6 @@
 	@apply #{'sm:col-span-7'};
 
 	> header {
-
 		// Title
 		> h1 {
 			@apply mt-4 mb-2;
@@ -74,12 +73,12 @@
 	// Supported devices
 	> details {
 		> summary {
-			@apply bg-hover #{'hover:!bg-border'};
+			@apply bg-bg-variant #{'hover:!bg-hover'};
 			@apply border;
 		}
 
 		> div {
-			@apply bg-hover;
+			@apply bg-bg-variant;
 			@apply border-l;
 		}
 	}

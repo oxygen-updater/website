@@ -505,8 +505,8 @@ export default function Home({
 				</p>
 
 				<Accordion
-					contentClassName="border-l bg-hover"
-					summaryClassName="border bg-hover hover:!bg-border"
+					contentClassName="border-l bg-bg-variant"
+					summaryClassName="border bg-bg-variant hover:!bg-hover"
 					summary="Featured reviews"
 					openByDefault
 				>

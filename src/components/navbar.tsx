@@ -82,7 +82,7 @@ export default function Navbar() {
 					<FontAwesomeIcon icon={showMoreLinks ? faAngleUp : faAngleDown} />
 				</button>
 
-				<div className={`links gap-y-4 hidden 2xs:flex ${showMoreLinks ? 'active absolute top-16 left-0 w-full p-4 flex-wrap !flex' : ''}`}>
+				<div className={`links gap-x-1 gap-y-4 hidden 2xs:flex ${showMoreLinks ? 'active absolute top-16 left-0 w-full p-4 flex-wrap !flex' : ''}`}>
 					{links.map(routerPath =>
 						<NavLink
 							key={routerPath.href}
