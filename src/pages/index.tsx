@@ -352,7 +352,7 @@ export default function Home({
 								rel="noopener"
 							>
 								<img
-									src="/img/google-play-store-badge-en.svg?v=1"
+									src="/img/google-play-store-badge-en.svg?v=2"
 									width="200"
 									alt="Get it on Google Play"
 								/>
