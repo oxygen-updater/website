@@ -337,6 +337,14 @@ export default function Home({
 							>
 								OnePlus
 							</a>
+							/
+							<a
+								href="https://www.realme.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								realme
+							</a>
 							{' '}
 							device
 							{' '}
@@ -377,18 +385,18 @@ export default function Home({
 							</ExternalLink>
 							.
 							{' '}
-							Ads can be removed by purchasing the ad-free unlock in the app&apos;s settings. This is a third-party app, not an official OPPO/OnePlus application.
+							Ads can be removed by purchasing the ad-free unlock in the app&apos;s settings. This is a third-party app, not an official OPPO/OnePlus/realme application.
 						</p>
 					</header>
 
-					<h2>Be the first to update your OPPO/OnePlus device</h2>
+					<h2>Be the first to update your OPPO/OnePlus/realme device</h2>
 
 					<p>
-						OPPO/OnePlus, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from OPPO/OnePlus/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so, OS Updater lets you skip the rollout queue and install official updates at your convenience.
+						OPPO/OnePlus/realme, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from OPPO/OnePlus/realme/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so, OS Updater lets you skip the rollout queue and install official updates at your convenience.
 					</p>
 
 					<p className="text-xs">
-						Note: the app supports all OPPO/OnePlus devices that aren&apos;t carrier-branded (e.g. T-Mobile & Verizon). Those devices can&apos;t be supported until you convert to unlocked firmware (this process is also called rebranding), because they lack the &ldquo;Local upgrade&rdquo; option, which is necessary to be able to update manually.
+						Note: the app supports all OPPO/OnePlus/realme devices that aren&apos;t carrier-branded (e.g. T-Mobile & Verizon). Those devices can&apos;t be supported until you convert to unlocked firmware (this process is also called rebranding), because they lack the &ldquo;Local upgrade&rdquo; option, which is necessary to be able to update manually.
 					</p>
 
 					<Accordion summary={`Supported devices (${totalEnabledDevices} in total)`}>

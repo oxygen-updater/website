@@ -21,10 +21,10 @@ export const introItemList: IntroItem[] = [{
 	crop: 'bottom',
 	h2: `Built-in download manager`,
 	p: [
-		`The app has a robust download mechanism, and it always downloads official updates <strong>directly from OPPO/OnePlus/Google servers</strong>. Assuming you have a sufficiently fast & stable internet connection, high speeds are almost always a guarantee.`,
+		`The app has a robust download mechanism, and it always downloads official updates <strong>directly from OPPO/OnePlus/realme/Google servers</strong>. Assuming you have a sufficiently fast & stable internet connection, high speeds are almost always a guarantee.`,
 		`The app <strong>automatically reports download failures</strong> to our team members, so that we can investigate & fix things if possible.`,
 	],
-	note: `since the app always downloads directly from OPPO/OnePlus/Google OTA servers, most of the time such failures are due to an unstable network connection on your end, or if you use a VPN (their servers block some VPNs).`,
+	note: `since the app always downloads directly from OPPO/OnePlus/realme/Google OTA servers, most of the time such failures are due to an unstable network connection on your end, or if you use a VPN (their servers block some VPNs).`,
 }, {
 	image: 'downloaded',
 	crop: 'bottom',
@@ -47,7 +47,7 @@ export const introItemList: IntroItem[] = [{
 	crop: 'top',
 	h2: `Stay informed`,
 	p: [
-		`All our team members are well-versed in all things tech, and we write regular news articles as well. The usual topics are related to OPPO/OnePlus, their devices/policies, OxygenOS/ColorOS & new OTA updates, and sometimes we post updates about our project too.`,
+		`All our team members are well-versed in all things tech, and we write regular news articles as well. The usual topics are related to OPPO/OnePlus/realme, their devices/policies, OxygenOS/ColorOS & new OTA updates, and sometimes we post updates about our project too.`,
 		`We highly recommend reading through our articles, especially those about a new OTA update. There's often <strong>important information</strong> in those articles that all our users should be aware of.`,
 	],
 	note: `notifications for articles can be controlled within the app itself, as well as in Android's global notification settings screen.`,
