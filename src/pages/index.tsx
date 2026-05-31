@@ -374,7 +374,7 @@ export default function Home({
 						<p>
 							An
 							{' '}
-							<ExternalLink href="https://github.com/oxygen-updater/oxygen-updater">
+							<ExternalLink href="https://github.com/oxygen-updater/os-updater">
 								open-source
 							</ExternalLink>
 							{' '}

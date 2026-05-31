@@ -10,7 +10,7 @@ export const iconItemList: IconItem[] = [{
 }, {
 	icon: faGithub,
 	tooltip: 'GitHub',
-	url: 'https://github.com/oxygen-updater/oxygen-updater',
+	url: 'https://github.com/oxygen-updater/os-updater',
 	rel: 'noopener',
 }, {
 	icon: faPatreon,
