@@ -10,6 +10,7 @@ import type { ParsedUrlQuery } from 'querystring';
 import TimeAgo from 'react-timeago';
 import GoogleAdsense from 'src/components/adsense';
 import DefaultHead from 'src/components/default-head';
+import GooglePreferredSourceButton from 'src/components/google-preferred-source-button';
 import type { Article } from 'src/models/response/article.interface';
 import { TITLE } from 'src/pages/_document';
 import styles from 'src/styles/Article.module.scss';
@@ -270,6 +271,8 @@ export default function Article({ article }: Props) {
 					</div>
 
 					<GoogleAdsense type="inarticle" />
+
+					<GooglePreferredSourceButton />
 
 					{showOutdatedNotice ?
 						<section className={styles.notice}>

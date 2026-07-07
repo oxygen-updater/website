@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from 'preact/hooks';
 import { firebaseOptions } from 'public/_config/firebase-options';
 import type { Article } from 'src/models/response/article.interface';
 import { TITLE } from 'src/pages/_document';
+import GooglePreferredSourceButton from './google-preferred-source-button';
 
 const FCM_TOPIC_NEWS = process.env.NEXT_PUBLIC_FCM_TOPIC_NEWS as string;
 const FCM_SW_SCOPE = '/firebase-cloud-messaging-push-scope';
@@ -68,27 +69,30 @@ export default function FcmNotification({ onNewArticle }: Props) {
 		showRequest && (permission !== undefined && permission !== 'granted') ?
 			// For some reason if it's a <div>, NextJS/Preact renders the HTML
 			// classes of `NewsPagination` from the second-load onwards
-			<section className="flex flex-wrap items-center justify-end px-4 py-1 -mx-4 sm:border-x border-b border-border sm:rounded-b">
-				<span className="flex-auto mt-2 xs:mt-0">Enable notifications if you&apos;d like to be kept informed of our articles</span>
+			<>
+				<section className="flex flex-wrap items-center justify-end px-4 py-1 -mx-4 sm:border-x border-b border-border sm:rounded-b">
+					<span className="flex-auto mt-2 xs:mt-0">Enable notifications if you&apos;d like to be kept informed of our articles</span>
 
-				<div className="flex">
-					<button
-						className="icon -ms-1"
-						onClick={requestPermission}
-					>
-						<FontAwesomeIcon
-							className="text-positive"
-							icon={faBell}
-						/>
-					</button>
-					<button
-						className="icon -me-1"
-						onClick={hideClicked}
-					>
-						<FontAwesomeIcon icon={faXmark} />
-					</button>
-				</div>
-			</section> : null
+					<div className="flex">
+						<button
+							className="icon -ms-1"
+							onClick={requestPermission}
+						>
+							<FontAwesomeIcon
+								className="text-positive"
+								icon={faBell}
+							/>
+						</button>
+						<button
+							className="icon -me-1"
+							onClick={hideClicked}
+						>
+							<FontAwesomeIcon icon={faXmark} />
+						</button>
+					</div>
+				</section>
+				<GooglePreferredSourceButton />
+			</> : <GooglePreferredSourceButton />
 	);
 }
 
