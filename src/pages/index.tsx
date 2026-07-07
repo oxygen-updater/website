@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import type { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
 import Accordion from 'src/components/accordion';
 import DefaultHead from 'src/components/default-head';
@@ -441,7 +442,12 @@ export default function Home({
 								/>
 							</div>
 
-							<h2>{item.h2}</h2>
+							<h2>
+								{item.image === 'news-list' ?
+									<Link href="/news/all/">
+										<a>{item.h2}</a>
+									</Link> : item.h2}
+							</h2>
 
 							{item.p.map(text =>
 								<p
