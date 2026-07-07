@@ -21,10 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
+          cache: true
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
 
       - name: Cache .next
         uses: actions/cache@v6
@@ -46,12 +51,12 @@ jobs:
           cat <<'EOF' > .env-cmdrc.js
           ${{ secrets.FILE_ENV_CMDRC_JS }}
           EOF
-          npm install
-          npm audit fix --audit-level=none
-          npx --yes update-browserslist-db@latest
+          pnpm install
+          pnpm audit --fix=override --audit-level=none
+          pnpm dlx update-browserslist-db latest
           npx next telemetry disable
-          npm run build:prod
-          npm run build:test
+          pnpm run build:prod
+          pnpm run build:test
           rm .env-cmdrc.js
           tar -C out/prod -czf $PRODUCTION_ARTIFACT_NAME .
           tar -C out/test -czf $TESTING_ARTIFACT_NAME .

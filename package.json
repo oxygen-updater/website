@@ -20,7 +20,8 @@
 		"build:test": "env-cmd -e test --use-shell \"next build && next export -o out/test\"",
 		"build:prod": "env-cmd -e prod --use-shell \"next build && next export -o out/prod\"",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"preinstall": "npx only-allow pnpm"
 	},
 	"//": "Ensure firebase version is synced with public/fcm-sw.js",
 	"dependencies": {
@@ -33,6 +34,7 @@
 		"react-timeago": "^8.3.0"
 	},
 	"devDependencies": {
+		"@fortawesome/fontawesome-common-types": "^7.3.0",
 		"@fortawesome/fontawesome-svg-core": "^7.3.0",
 		"@fortawesome/free-brands-svg-icons": "^7.3.0",
 		"@fortawesome/free-regular-svg-icons": "^7.3.0",
@@ -53,11 +55,5 @@
 		"sass": "^1.101.0",
 		"tailwindcss": "^3.4.19",
 		"typescript": "^6.0.3"
-	},
-	"allowScripts": {
-		"@firebase/util@1.15.1": true,
-		"@parcel/watcher@2.5.1": true,
-		"next-plugin-preact@3.0.7": true,
-		"protobufjs@7.6.5": true
 	}
 }

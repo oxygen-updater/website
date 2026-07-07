@@ -1,0 +1,16 @@
+# https://pnpm.io/supply-chain-security. Also set globall via `pnpm config set <key> <value>`
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 518400
+allowBuilds:
+  '@firebase/util': true
+  '@parcel/watcher': true
+  next-plugin-preact: true
+  protobufjs: true
+
+# Temporary exclusions, to fix recent CVEs and/or GHSAs.
+# Done automatically by `ng update` or `pnpm audit --fix=override`; modified for terseness.
+minimumReleaseAgeExclude:
+
+# `pnpm audit --fix=override` works better than `--fix=update` (introduced in v11)
+overrides:

@@ -1,9 +1,8 @@
-import { initializeApp } from '@firebase/app';
-import type { MessagePayload, Messaging } from '@firebase/messaging';
-import { getToken, isSupported, onMessage } from '@firebase/messaging';
 import { faBell, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getMessaging } from 'firebase/messaging';
+import { initializeApp } from 'firebase/app';
+import type { MessagePayload, Messaging } from 'firebase/messaging';
+import { getMessaging, getToken, isSupported, onMessage } from 'firebase/messaging';
 import type { Dispatch, StateUpdater } from 'preact/hooks';
 import { useCallback, useEffect, useState } from 'preact/hooks';
 import { firebaseOptions } from 'public/_config/firebase-options';
