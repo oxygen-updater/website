@@ -14,3 +14,4 @@ minimumReleaseAgeExclude:
 
 # `pnpm audit --fix=override` works better than `--fix=update` (introduced in v11)
 overrides:
+  postcss@<8.5.10: ^8.5.10
