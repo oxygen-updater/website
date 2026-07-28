@@ -68,7 +68,7 @@ export default class MyDocument extends Document {
 					<meta
 						key=".$keywords"
 						name="keywords"
-						content="Oxygen,OPPO,OnePlus,OxygenOS,ColorOS,OS,Android,AndroidOS,System,Update,Systemupdate,OTA,Flash,Download,Faster,App"
+						content="OPPO,OnePlus,realme,OxygenOS,ColorOS,Oxygen,Color,OS,Android,AndroidOS,system,update,systemupdate,OTA,flash,download,faster,rollout,app"
 					/>
 
 					{/* Global Open Graph tags */}
