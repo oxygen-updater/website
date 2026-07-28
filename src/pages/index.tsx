@@ -20,7 +20,7 @@ import type { AppInfo } from 'src/models/response/app-info.interface';
 import type { Device } from 'src/models/response/device.interface';
 import type { Theme } from 'src/models/theme.type';
 import { KEY_THEME_DARK } from 'src/models/theme.type';
-import { TITLE } from 'src/pages/_document';
+import { BRAND, TITLE } from 'src/pages/_document';
 import styles from 'src/styles/Index.module.scss';
 import { BREAKPOINT_SM } from 'src/utilities/breakpoints';
 import { sanitize } from 'src/utilities/sanitize';
@@ -313,7 +313,7 @@ export default function Home({
 					<header>
 						<Logo size={128} />
 
-						<h1>OS Updater</h1>
+						<h1>{TITLE}</h1>
 						<p>
 							v
 							{appInfo.version || '0.0.0'}
@@ -386,18 +386,40 @@ export default function Home({
 							</ExternalLink>
 							.
 							{' '}
-							Ads can be removed by purchasing the ad-free unlock in the app&apos;s settings. This is a third-party app, not an official OPPO/OnePlus/realme application.
+							Ads can be removed by purchasing the ad-free unlock in the app&apos;s settings. This is a third-party app, not an official
+							{' '}
+							{BRAND}
+							{' '}
+							application.
 						</p>
 					</header>
 
-					<h2>Be the first to update your OPPO/OnePlus/realme device</h2>
+					<h2>
+						Be the first to update your
+						{' '}
+						{BRAND}
+						{' '}
+						device
+					</h2>
 
 					<p>
-						OPPO/OnePlus/realme, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from OPPO/OnePlus/realme/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so, OS Updater lets you skip the rollout queue and install official updates at your convenience.
+						{BRAND}
+						, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from
+						{' '}
+						{BRAND}
+						/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so,
+						{' '}
+						{TITLE}
+						{' '}
+						lets you skip the rollout queue and install official updates at your convenience.
 					</p>
 
 					<p className="text-xs">
-						Note: the app supports all OPPO/OnePlus/realme devices that aren&apos;t carrier-branded (e.g. T-Mobile & Verizon). Those devices can&apos;t be supported until you convert to unlocked firmware (this process is also called rebranding), because they lack the &ldquo;Local upgrade&rdquo; option, which is necessary to be able to update manually.
+						Note: the app supports all
+						{' '}
+						{BRAND}
+						{' '}
+						devices that aren&apos;t carrier-branded (e.g. T-Mobile & Verizon). Those devices can&apos;t be supported until you convert to unlocked firmware (this process is also called rebranding), because they lack the &ldquo;Local upgrade&rdquo; option, which is necessary to be able to update manually.
 					</p>
 
 					<Accordion summary={`Supported devices (${totalEnabledDevices} in total)`}>

@@ -1,14 +1,16 @@
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
+// Note: if any changes are made here, be sure to also update `public/site.webmanifest`
 export const TITLE = 'OS Updater';
+export const BRAND = 'OPPO/OnePlus/realme';
 export const DEFAULT_META = (
 	<>
 		{/* Ensure this is synced with `og:description` */}
 		<meta
 			key=".$description"
 			name="description"
-			content={`${TITLE} is an open-source app for OPPO/OnePlus/realme devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!`}
+			content={`${TITLE} is an open-source app for ${BRAND} devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!`}
 		/>
 		<meta
 			key=".$author"
@@ -25,7 +27,7 @@ export const DEFAULT_META = (
 		<meta
 			key=".$og:title"
 			property="og:title"
-			content={`${TITLE} — skip rollout queues & update your OPPO/OnePlus/realme device ASAP!`}
+			content={`${TITLE} — skip rollout queues & update your ${BRAND} device ASAP!`}
 		/>
 		<meta
 			key=".$og:image"
@@ -36,7 +38,7 @@ export const DEFAULT_META = (
 		<meta
 			key=".$og:description"
 			property="og:description"
-			content={`${TITLE} is an open-source app for OPPO/OnePlus/realme devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!`}
+			content={`${TITLE} is an open-source app for ${BRAND} devices that allows you to install official OTA (over-the-air) updates ASAP. Ensure your device is up-to-date — it's quick, easy, and free!`}
 		/>
 
 		{/* Default Twitter tags */}

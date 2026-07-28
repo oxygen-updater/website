@@ -10,6 +10,7 @@ import NavLink from 'src/components/navlink';
 import { useTheme } from 'src/hooks/theme';
 import type { HrefAndText } from 'src/models/copyright-item.interface';
 import { KEY_THEME_DARK, KEY_THEME_LIGHT } from 'src/models/theme.type';
+import { TITLE } from 'src/pages/_document';
 import { BREAKPOINT_XS } from 'src/utilities/breakpoints';
 
 const links: HrefAndText[] = [{
@@ -68,7 +69,7 @@ export default function Navbar() {
 				<Link href="/">
 					<a className="btn font-display font-bold text-xl -ms-5 hover:!bg-transparent">
 						<Logo size={32} />
-						<span className="ms-2 hidden sm:block">OS Updater</span>
+						<span className="ms-2 hidden sm:block">{TITLE}</span>
 					</a>
 				</Link>
 
