@@ -1,9 +1,13 @@
 .host {
-	@apply overflow-x-auto; // horizontally scrollable
-
 	// Device group
 	> div {
-		@apply overflow-x-auto;
+		// This doesn't apply the overridden class defined in scrollbar.scss,
+		// so we have to duplicate the styles here.
+		// @apply overflow-x-auto; // horizontally scrollable
+		scrollbar-color: var(--border) transparent;
+		scrollbar-width: thin;
+		overflow-x: auto;
+		overflow-x: overlay !important;
 
 		& + div {
 			@apply border-t border-hover;

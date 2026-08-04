@@ -4,8 +4,8 @@ import type { ChangeEvent } from 'react';
 import TimeAgo from 'react-timeago';
 import DefaultHead from 'src/components/default-head';
 import type { DeviceLatestVersions } from 'src/models/response/versions.interface';
+import { TITLE } from 'src/pages/_document';
 import styles from 'src/styles/Versions.module.scss';
-import { TITLE } from './_document';
 
 interface Props {
 	latestVersions: DeviceLatestVersions
