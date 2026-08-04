@@ -41,6 +41,10 @@
 			@apply font-mono;
 		}
 
+		small {
+			@apply text-fg-variant;
+		}
+
 		div.\!hidden + hr {
 			@apply hidden;
 		}
