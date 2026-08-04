@@ -16,9 +16,6 @@ import { BREAKPOINT_XS } from 'src/utilities/breakpoints';
 const links: HrefAndText[] = [{
 	href: '/news/all/',
 	text: 'News',
-}, {
-	href: '/faq/',
-	text: 'FAQ',
 }];
 
 export default function Navbar() {

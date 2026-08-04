@@ -6,6 +6,9 @@ import type { HrefAndText } from 'src/models/copyright-item.interface';
 import ExternalLink from './external-link';
 
 const links: HrefAndText[] = [{
+	href: '/faq/',
+	text: 'FAQ',
+}, {
 	href: '/privacy',
 	text: 'Privacy Policy',
 }];
