@@ -57,6 +57,11 @@ body {
 	}
 }
 
+pre {
+	@apply p-2 leading-6;
+	@apply bg-hover rounded;
+}
+
 a.external::after {
 	content: '\a0\2197'; // &nbsp;↗
 	opacity: 0.75;
