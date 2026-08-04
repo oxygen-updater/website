@@ -107,15 +107,8 @@ export default class MyDocument extends Document {
 
 					{/* Favicons */}
 					<link
-						rel="apple-touch-icon"
-						sizes="180x180"
-						href="/img/favicon/apple-touch-icon.png?v=1"
-					/>
-					<link
-						rel="icon"
-						type="image/png"
-						sizes="32x32"
-						href="/img/favicon/favicon-32x32.png?v=1"
+						rel="manifest"
+						href="/site.webmanifest?v=1"
 					/>
 					<link
 						rel="icon"
@@ -126,12 +119,29 @@ export default class MyDocument extends Document {
 					<link
 						rel="icon"
 						type="image/png"
+						sizes="96x96"
+						href="/favicon-96x96.png?v=1"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
+						sizes="32x32"
+						href="/img/favicon/favicon-32x32.png?v=1"
+					/>
+					<link
+						rel="icon"
+						type="image/png"
 						sizes="16x16"
 						href="/img/favicon/favicon-16x16.png?v=1"
 					/>
 					<link
-						rel="manifest"
-						href="/site.webmanifest?v=1"
+						rel="icon"
+						type="image/svg+xml"
+						href="/img/favicon/favicon.svg?v=1"
+					/>
+					<link
+						rel="shortcut icon"
+						href="/favicon.ico?v=1"
 					/>
 					<link
 						rel="mask-icon"
@@ -140,8 +150,9 @@ export default class MyDocument extends Document {
 						color="#f50514"
 					/>
 					<link
-						rel="shortcut icon"
-						href="/favicon.ico?v=1"
+						rel="apple-touch-icon"
+						sizes="180x180"
+						href="/img/favicon/apple-touch-icon.png?v=1"
 					/>
 					<meta
 						key=".$apple-mobile-web-app-title"
