@@ -15,10 +15,9 @@
 		"email": "adhirajsinghchauhan@gmail.com"
 	},
 	"scripts": {
-		"dev": "env-cmd -e dev -- next dev -p 80",
-		"build:dev": "env-cmd -e dev --use-shell \"next build && next export -o out/dev\"",
-		"build:test": "env-cmd -e test --use-shell \"next build && next export -o out/test\"",
-		"build:prod": "env-cmd -e prod --use-shell \"next build && next export -o out/prod\"",
+		"dev": "env-cmd -e cyanogenDev -- next dev -p 80",
+		"build:dev": "env-cmd -e cyanogenDev --use-shell \"next build && next export -o out/cyanogenDev\"",
+		"build:prod": "env-cmd -e cyanogenProd --use-shell \"next build && next export -o out/cyanogenProd\"",
 		"start": "next start",
 		"lint": "next lint",
 		"preinstall": "npx only-allow pnpm"

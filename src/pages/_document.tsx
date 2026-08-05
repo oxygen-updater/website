@@ -2,8 +2,8 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 // Note: if any changes are made here, be sure to also update `public/site.webmanifest`
-export const TITLE = 'OS Updater';
-export const BRAND = 'OPPO/OnePlus/realme';
+export const TITLE = 'Cyanogen Updater';
+export const BRAND = 'Cyanogen';
 export const DEFAULT_META = (
 	<>
 		{/* Ensure this is synced with `og:description` */}
@@ -68,7 +68,7 @@ export default class MyDocument extends Document {
 					<meta
 						key=".$keywords"
 						name="keywords"
-						content="OPPO,OnePlus,realme,OxygenOS,ColorOS,Oxygen,Color,OS,Android,AndroidOS,system,update,systemupdate,OTA,flash,download,faster,rollout,app"
+						content="OPPO,OnePlus,BQ Aquaris,Wileyfox,Smartfren,Andromax,YU,Yuphoria,Yureka,Yutopia,ZUK,Cyanogen,CyanogenOS,Cyanogen OS,CyanogenMod,Cyanogen Mod,OS,Android,AndroidOS,system,update,systemupdate,OTA,flash,download,faster,rollout,app"
 					/>
 
 					{/* Global Open Graph tags */}
@@ -147,7 +147,7 @@ export default class MyDocument extends Document {
 						rel="mask-icon"
 						href="/img/favicon/safari-pinned-tab.svg?v=1"
 						// @ts-ignore
-						color="#f50514"
+						color="#009bd5"
 					/>
 					<link
 						rel="apple-touch-icon"
@@ -167,7 +167,7 @@ export default class MyDocument extends Document {
 					<meta
 						key=".$msapplication-TileColor"
 						name="msapplication-TileColor"
-						content="#f50514"
+						content="#009bd5"
 					/>
 					<meta
 						key=".$msapplication-TileImage"
@@ -177,7 +177,7 @@ export default class MyDocument extends Document {
 					<meta
 						key=".$theme-color"
 						name="theme-color"
-						content="#f50514"
+						content="#009bd5"
 					/>
 
 					{/* For Google Fonts */}

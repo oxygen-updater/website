@@ -19,7 +19,7 @@ body {
 	}
 
 	&.light {
-		--primary: #f50514;
+		--primary: #009bd5;
 		--bg: #faf9ff; // surface
 		--bg-variant: rgb(222, 226, 242, 0.25); // surfaceVariant translucent
 		--fg: #181b25; // onSurface
@@ -38,7 +38,7 @@ body {
 	}
 
 	&.dark {
-		--primary: #ff3d39;
+		--primary: #2fb6e6;
 		--bg: #0f131c;
 		--bg-variant: rgb(66, 71, 84, 0.25);
 		--fg: #dfe2ef;
@@ -54,6 +54,66 @@ body {
 
 		// https://caniuse.com/mdn-html_elements_meta_name_color-scheme
 		color-scheme: dark;
+	}
+}
+
+::backdrop {
+	@apply bg-overlay;
+	animation: backdrop-fade-in 250ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+// Styled as a bottom sheet, sits just below the page header
+dialog {
+	@apply bg-bg-variant container mx-auto my-0;
+	@apply border border-border rounded-t-2xl;
+	// Prevent scrolling main content if we reach the end of the dialog's scroll container
+	@apply overscroll-contain;
+
+	backdrop-filter: blur(10px);
+
+	max-height: calc(100% - 8rem);
+	top: 8rem;
+
+	animation: sheet-exit 150ms cubic-bezier(0.2, 0, 0, 1);
+
+	&:open,
+	&[open] {
+		@apply flex flex-col;
+		animation: sheet-enter 250ms cubic-bezier(0.2, 0, 0, 1);
+	}
+}
+
+@keyframes sheet-enter {
+	from {
+		display: none;
+		opacity: 0;
+		transform: translateY(5%);
+	}
+	to {
+		display: block;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes sheet-exit {
+	from {
+		display: block;
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		display: none;
+		opacity: 0;
+		transform: translateY(5%);
+	}
+}
+
+@keyframes backdrop-fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

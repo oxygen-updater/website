@@ -9,7 +9,7 @@ export const introItemList: IntroItem[] = [{
 		`If you're already up-to-date, the app displays important information about that latest update:`,
 	],
 	li: [
-		`Android & OxygenOS/ColorOS version`,
+		`Android & Cyanogen version`,
 		`OTA version`,
 		`Incremental OS version`,
 		`Security patch date`,
@@ -21,10 +21,8 @@ export const introItemList: IntroItem[] = [{
 	crop: 'bottom',
 	h2: `Built-in download manager`,
 	p: [
-		`The app has a robust download mechanism, and it always downloads official updates <strong>directly from OPPO/OnePlus/realme/Google servers</strong>. Assuming you have a sufficiently fast & stable internet connection, high speeds are almost always a guarantee.`,
-		`The app <strong>automatically reports download failures</strong> to our team members, so that we can investigate & fix things if possible.`,
+		`The app has a robust download mechanism, and it always downloads official firmware <a href="/downloads/"><strong>from this site</strong></a>. Assuming you have a sufficiently fast & stable internet connection, high speeds are almost always a guarantee.`,
 	],
-	note: `since the app always downloads directly from OPPO/OnePlus/realme/Google OTA servers, most of the time such failures are due to an unstable network connection on your end, or if you use a VPN (their servers block some VPNs).`,
 }, {
 	image: 'downloaded',
 	crop: 'bottom',
@@ -39,7 +37,7 @@ export const introItemList: IntroItem[] = [{
 	crop: 'top',
 	h2: `Detailed install guides`,
 	p: [
-		`The installation process is handled by the system itself, and is fairly straightforward. If you're new to this or find yourself getting stuck somewhere, don't worry — the app shows a step-by-step installation guide after the download & verification tasks successfully complete.`,
+		`The installation process is handled by the system's recovery environment itself, and is fairly straightforward. If you're new to this or find yourself getting stuck somewhere, don't worry — the app shows a step-by-step installation guide after the download & verification tasks successfully complete.`,
 		`We try and keep the guides up-to-date, but if you ever spot an opportunity for improvement, don't hesistate to let us know (either via <a href="mailto:support@oxygenupdater.com" target="_blank" rel="noopener noreferrer">email</a> or on our <a href="https://discord.gg/5TXdhKJ" target="_blank" rel="noopener noreferrer" class="external">Discord server</a>).`,
 	],
 }, {
@@ -61,13 +59,11 @@ export const introItemList: IntroItem[] = [{
 	li: [
 		`Device name (along with region, if any)`,
 		`Model number`,
-		`Android & OxygenOS/ColorOS version`,
+		`Android & Cyanogen version`,
 		`Security patch date`,
 		`Kernel version`,
 		`RAM configuration`,
 		`SoC & frequency (as reported by the system)`,
-		`Screen size (in inches & cm)`,
-		`Camera megapixel counts`,
 	],
 	note: `most software information is also shown on the main screen if you're already up-to-date.`,
 }, {

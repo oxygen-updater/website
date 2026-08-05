@@ -18,8 +18,8 @@
 	> div > div {
 		@apply grid grid-flow-col gap-4 items-center;
 
-		// Each cell is at least 215px wide, which comfortably fits the longest device name — "OnePlus Nord CE 4 Lite".
-		grid-auto-columns: 215px;
+		// First cell is 215px wide, which comfortably fits the longest device name — "Wileyfox Swift 2/2+/2X".
+		grid-auto-columns: 215px minmax(215px, 1fr) minmax(215px, 1fr);
 
 		// Device name
 		> h2 {

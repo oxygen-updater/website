@@ -2,7 +2,7 @@ name: Build & Deploy
 on:
   push:
     branches:
-    - main
+    - cyanogen
     paths:
     - 'public/**'
     - 'src/**'
@@ -13,7 +13,7 @@ on:
     - '!.*rc.json'
 
 env:
-  PROD_ARTIFACT_DIR_PATH: out/prod
+  PROD_ARTIFACT_DIR_PATH: out/cyanogenProd
 
 jobs:
   main:
@@ -42,6 +42,8 @@ jobs:
           echo "::add-mask::${{ secrets.API_URL_DEV }}"
           echo "::add-mask::${{ secrets.API_URL_TEST }}"
           echo "::add-mask::${{ secrets.API_URL_PROD }}"
+          echo "::add-mask::${{ secrets.API_URL_CYANOGEN_DEV }}"
+          echo "::add-mask::${{ secrets.API_URL_CYANOGEN_PROD }}"
 
       - name: Build & bundle into gzipped tar
         run: |
@@ -62,8 +64,8 @@ jobs:
 
       - name: Stage to servers & deploy
         env:
-          PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_PRODUCTION_STAGING_DIR_PREFIX }}website
+          PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_CYANOGEN_PRODUCTION_STAGING_DIR_PREFIX }}website
         run: |
           ssh prod-server "mkdir -p $PRODUCTION_STAGING_DIR_PATH && cd $PRODUCTION_STAGING_DIR_PATH && rm *.tgz -f"
           scp $PROD_ARTIFACT_DIR_PATH.tgz prod-server:$PRODUCTION_STAGING_DIR_PATH
-          ssh prod-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
+          ssh prod-server "sudo ${{ secrets.SSH_CYANOGEN_WEBSITE_DEPLOY_SCRIPT }}"

@@ -16,6 +16,9 @@ import { BREAKPOINT_XS } from 'src/utilities/breakpoints';
 const links: HrefAndText[] = [{
 	href: '/news/all/',
 	text: 'News',
+}, {
+	href: '/downloads/',
+	text: 'Firmware',
 }];
 
 export default function Navbar() {

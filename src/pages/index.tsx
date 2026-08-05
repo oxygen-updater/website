@@ -321,30 +321,14 @@ export default function Home({
 						</p>
 
 						<p>
-							Skip staged rollout queues and update your
+							Update your
 							{' '}
 							<a
-								href="https://www.oppo.com/en/"
+								href="https://en.wikipedia.org/wiki/CyanogenMod"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								OPPO
-							</a>
-							/
-							<a
-								href="https://www.oneplus.com"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								OnePlus
-							</a>
-							/
-							<a
-								href="https://www.realme.com"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								realme
+								{BRAND}
 							</a>
 							{' '}
 							device
@@ -373,7 +357,12 @@ export default function Home({
 						</div>
 
 						<p>
-							An
+							This is a legacy app, succeeded by
+							{' '}
+							<ExternalLink href="https://oxygenupdater.com/">
+								OS Updater
+							</ExternalLink>
+							, an
 							{' '}
 							<ExternalLink href="https://github.com/oxygen-updater/os-updater">
 								open-source
@@ -386,7 +375,7 @@ export default function Home({
 							</ExternalLink>
 							.
 							{' '}
-							Ads can be removed by purchasing the ad-free unlock in the app&apos;s settings. This is a third-party app, not an official
+							This is a third-party app, not an official
 							{' '}
 							{BRAND}
 							{' '}
@@ -395,7 +384,7 @@ export default function Home({
 					</header>
 
 					<h2>
-						Be the first to update your
+						Update your
 						{' '}
 						{BRAND}
 						{' '}
@@ -404,22 +393,31 @@ export default function Home({
 
 					<p>
 						{BRAND}
-						, like all other OEMs, rolls out OTA updates in a staged manner. This means you might have to wait a long time before you receive the update. That&apos;s where this app comes in — it downloads only official updates directly from
+						{' '}
+						was an Android ROM that ceased development in 2016. This site (and app) allows you to download the latest
 						{' '}
 						{BRAND}
-						/Google servers, and even verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so,
+						{' '}
+						firmware.
+						The app auto-verifies the integrity of the downloaded ZIP (using MD5 checksums) before allowing you to install. By doing so,
 						{' '}
 						{TITLE}
 						{' '}
-						lets you skip the rollout queue and install official updates at your convenience.
+						lets you install official updates at your convenience.
 					</p>
 
 					<p className="text-xs">
-						Note: the app supports all
+						Note: the app supports as many
 						{' '}
 						{BRAND}
 						{' '}
-						devices that aren&apos;t carrier-branded (e.g. T-Mobile & Verizon). Those devices can&apos;t be supported until you convert to unlocked firmware (this process is also called rebranding), because they lack the &ldquo;Local upgrade&rdquo; option, which is necessary to be able to update manually.
+						devices that were possible back when it was still under development. It has been succeeded by the
+						{' '}
+						<ExternalLink href="https://oxygenupdater.com/">
+							OS Updater
+						</ExternalLink>
+						{' '}
+						Android app, which supports many other modern brands, e.g. OPPO, OnePlus, realme.
 					</p>
 
 					<Accordion summary={`Supported devices (${totalEnabledDevices} in total)`}>

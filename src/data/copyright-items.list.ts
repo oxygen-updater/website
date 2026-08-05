@@ -6,9 +6,9 @@ export const copyrightItemList: CopyrightItem[] = [{
 	text: 'Adhiraj S. Chauhan',
 	suffix: '• All rights reserved',
 }, {
-	prefix: 'OnePlus, OxygenOS and the respective logos are registered trademarks of',
-	href: 'https://www.oneplus.com',
-	text: 'OnePlus Technology (Shenzhen) Co., Ltd.',
+	prefix: 'Cyanogen® and Cyanogen® OS are trademarks of',
+	href: 'https://cyngn.com/about',
+	text: 'Cyanogen® Inc.',
 }, {
 	prefix: 'AdMob™, AdSense™, Android™, Google Play and the Google Play logo are registered trademarks of',
 	href: 'https://google.com',
