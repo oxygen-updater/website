@@ -14,7 +14,6 @@ on:
 
 env:
   PROD_ARTIFACT_DIR_PATH: out/prod
-  TEST_ARTIFACT_DIR_PATH: out/test
 
 jobs:
   main:
@@ -52,27 +51,19 @@ jobs:
           pnpm dlx update-browserslist-db latest
           pnpm exec next telemetry disable
           pnpm run build:prod && tar -C $PROD_ARTIFACT_DIR_PATH -czf $PROD_ARTIFACT_DIR_PATH.tgz .
-          pnpm run build:test && tar -C $TEST_ARTIFACT_DIR_PATH -czf $TEST_ARTIFACT_DIR_PATH.tgz .
           rm .env-cmdrc.js
 
       - name: Setup SSH keys
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRODUCTION_PRIVATE_KEY }}" > ~/.ssh/prod_ed25519
-          echo "${{ secrets.SSH_TESTING_PRIVATE_KEY }}" > ~/.ssh/test_ed25519
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-          chmod 600 ~/.ssh/prod_ed25519 ~/.ssh/test_ed25519 ~/.ssh/config
           echo -e "Host prod-server\n\tHostName ${{ secrets.SSH_PRODUCTION_HOST }}\n\tPort ${{ secrets.SSH_PRODUCTION_PORT }}\n\tUser ${{ secrets.SSH_PRODUCTION_USERNAME }}\n\tIdentityFile ~/.ssh/prod_ed25519\n\n" >> ~/.ssh/config
-          echo -e "Host test-server\n\tHostName ${{ secrets.SSH_TESTING_HOST }}\n\tPort ${{ secrets.SSH_TESTING_PORT }}\n\tUser ${{ secrets.SSH_TESTING_USERNAME }}\n\tIdentityFile ~/.ssh/test_ed25519\n\n" >> ~/.ssh/config
 
       - name: Stage to servers & deploy
         env:
           PRODUCTION_STAGING_DIR_PATH: ${{ secrets.SSH_PRODUCTION_STAGING_DIR_PREFIX }}website
-          TESTING_STAGING_DIR_PATH: ${{ secrets.SSH_TESTING_STAGING_DIR_PREFIX }}website
         run: |
           ssh prod-server "mkdir -p $PRODUCTION_STAGING_DIR_PATH && cd $PRODUCTION_STAGING_DIR_PATH && rm *.tgz -f"
-          ssh test-server "mkdir -p $TESTING_STAGING_DIR_PATH && cd $TESTING_STAGING_DIR_PATH && rm *.tgz -f"
           scp $PROD_ARTIFACT_DIR_PATH.tgz prod-server:$PRODUCTION_STAGING_DIR_PATH
-          scp $TEST_ARTIFACT_DIR_PATH.tgz test-server:$TESTING_STAGING_DIR_PATH
           ssh prod-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
-          ssh test-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
