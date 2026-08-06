@@ -13,8 +13,8 @@ on:
     - '!.*rc.json'
 
 env:
-  PRODUCTION_ARTIFACT_NAME: out/prod.tgz
-  TESTING_ARTIFACT_NAME: out/test.tgz
+  PROD_ARTIFACT_DIR_PATH: out/prod
+  TEST_ARTIFACT_DIR_PATH: out/test
 
 jobs:
   main:
@@ -22,23 +22,21 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Install pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/setup@v2
         with:
           version: 11
+          runtime: node@lts
           cache: true
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: pnpm
+          install: true
 
       - name: Cache .next
         uses: actions/cache@v6
         with:
           path: ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('public/**', 'src/**', '*.m?js', 'tsconfig.json', '!.*rc.m?js') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('public/**', 'src/**', '*.m?js', 'tsconfig.json', '!.*rc.m?js') }}
           # If source files changed but packages didn't, rebuild from a prior cache
-          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
 
       - name: Add dev/test/prod API masks
         run: |
@@ -51,15 +49,12 @@ jobs:
           cat <<'EOF' > .env-cmdrc.js
           ${{ secrets.FILE_ENV_CMDRC_JS }}
           EOF
-          pnpm install
           pnpm audit --fix=override --audit-level=none
           pnpm dlx update-browserslist-db latest
-          npx next telemetry disable
-          pnpm run build:prod
-          pnpm run build:test
+          pnpm exec next telemetry disable
+          pnpm run build:prod && tar -C $PROD_ARTIFACT_DIR_PATH -czf $PROD_ARTIFACT_DIR_PATH.tgz .
+          pnpm run build:test && tar -C $TEST_ARTIFACT_DIR_PATH -czf $TEST_ARTIFACT_DIR_PATH.tgz .
           rm .env-cmdrc.js
-          tar -C out/prod -czf $PRODUCTION_ARTIFACT_NAME .
-          tar -C out/test -czf $TESTING_ARTIFACT_NAME .
 
       - name: Setup SSH keys
         run: |
@@ -78,7 +73,7 @@ jobs:
         run: |
           ssh prod-server "mkdir -p $PRODUCTION_STAGING_DIR_PATH && cd $PRODUCTION_STAGING_DIR_PATH && rm *.tgz -f"
           ssh test-server "mkdir -p $TESTING_STAGING_DIR_PATH && cd $TESTING_STAGING_DIR_PATH && rm *.tgz -f"
-          scp $PRODUCTION_ARTIFACT_NAME prod-server:$PRODUCTION_STAGING_DIR_PATH
-          scp $TESTING_ARTIFACT_NAME test-server:$TESTING_STAGING_DIR_PATH
+          scp $PROD_ARTIFACT_DIR_PATH.tgz prod-server:$PRODUCTION_STAGING_DIR_PATH
+          scp $TEST_ARTIFACT_DIR_PATH.tgz test-server:$TESTING_STAGING_DIR_PATH
           ssh prod-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
           ssh test-server "sudo ${{ secrets.SSH_WEBSITE_DEPLOY_SCRIPT }}"
