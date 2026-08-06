@@ -11,7 +11,14 @@ allowBuilds:
 # Temporary exclusions, to fix recent CVEs and/or GHSAs.
 # Done automatically by `ng update` or `pnpm audit --fix=override`; modified for terseness.
 minimumReleaseAgeExclude:
+  - cssnano
+  - cssnano-preset-default
+  - postcss-svgo
+  - isomorphic-dompurify
+  - postcss
+  - caniuse-lite
 
 # `pnpm audit --fix=override` works better than `--fix=update` (introduced in v11)
 overrides:
   postcss@<8.5.10: ^8.5.10
+  fast-uri@<3.1.5: ^3.1.5
