@@ -49,7 +49,6 @@ jobs:
           cat <<'EOF' > .env-cmdrc.js
           ${{ secrets.FILE_ENV_CMDRC_JS }}
           EOF
-          pnpm audit --fix=override --audit-level=none
           pnpm dlx update-browserslist-db latest
           pnpm exec next telemetry disable
           pnpm run build:prod && tar -C $PROD_ARTIFACT_DIR_PATH -czf $PROD_ARTIFACT_DIR_PATH.tgz .
