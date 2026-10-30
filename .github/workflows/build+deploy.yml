@@ -21,9 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          version: 11
+          version: 12
           runtime: node@lts
           cache: true
           install: true
